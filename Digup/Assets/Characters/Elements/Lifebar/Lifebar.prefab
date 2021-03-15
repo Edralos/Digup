@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthTransform: {fileID: 2393388432563308456}
-  SlideTime: 0.61
+  SlideTime: 0.6
 --- !u!1 &3180048520180438788
 GameObject:
   m_ObjectHideFlags: 0

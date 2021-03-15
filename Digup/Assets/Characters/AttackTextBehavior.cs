@@ -13,6 +13,7 @@ public class AttackTextBehavior : MonoBehaviour
     private Color targetColor;
     private Vector3 origin;
     private Vector3 target;
+    Coroutine CurrentRoutine;
 
 
     // Start is called before the first frame update
@@ -28,8 +29,12 @@ public class AttackTextBehavior : MonoBehaviour
 
     public void DisplayText(string txt)
     {
+        if (CurrentRoutine != null)
+        {
+            StopCoroutine(CurrentRoutine);
+        }
         Text.text = txt;
-        StartCoroutine(DisplayCoroutine());
+        CurrentRoutine = StartCoroutine(DisplayCoroutine());
     }
 
 
@@ -45,7 +50,7 @@ public class AttackTextBehavior : MonoBehaviour
         TextTransform.localPosition = origin;
         Text.color = originColor;
         Text.text = "";
-        yield return null;
+        
 
     }
 

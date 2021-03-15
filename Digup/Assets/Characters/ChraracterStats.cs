@@ -48,19 +48,26 @@ public class ChraracterStats : MonoBehaviour
 
     }
 
-    public int Heal(int healAmount)
+    private void Start()
+    {
+        float healthRatio = (float)HP / (float)MaxHp;
+
+        Lifebar.Set(healthRatio);
+    }
+
+    public void Heal(int healAmount)
     {
         if (healAmount + HP >= MaxHp)
         {
             Lifebar.Set(1f);
             AttackTextBehavior.DisplayText($"Heal {healAmount}");
             HP = MaxHp;
-            return MaxHp;
+            return;
         }
-        else if (HP == 0)
+        else if (HP <= 0)
         {
             AttackTextBehavior.DisplayText($"Heal {healAmount}");
-            return 0;
+            return;
         }
         float healedRatio = (float)healAmount / (float)MaxHp;
         healedRatio += Lifebar.HealthTransform.localScale.x;
@@ -68,11 +75,19 @@ public class ChraracterStats : MonoBehaviour
         HP += healAmount;
         AttackTextBehavior.DisplayText($"Heal {healAmount}");
 
-        return HP;
     }
 
+    public void TestDamage(int damageAmount)
+    {
+        Damage(damageAmount, false);
+    }
 
-    public int Damage(int damageAmount, bool isCrit)
+    public void TestCrit(int damageAmount)
+    {
+        Damage(damageAmount, true);
+    }
+
+    public void Damage(int damageAmount, bool isCrit)
     {
         if (HP - damageAmount <= 0)
         {
@@ -87,8 +102,7 @@ public class ChraracterStats : MonoBehaviour
 
                 AttackTextBehavior.DisplayText($"Damage {damageAmount}");
             }
-
-            return 0;
+            return;
 
         }
         if (isCrit)
@@ -103,9 +117,9 @@ public class ChraracterStats : MonoBehaviour
         }
         HP -= damageAmount;
         float damageRatio = (float)damageAmount / (float)MaxHp;
+        Debug.Log($"Damage {damageRatio}");
         damageRatio = Lifebar.HealthTransform.localScale.x - damageRatio;
         Lifebar.Set(damageRatio);
-        return HP;
 
 
     }
