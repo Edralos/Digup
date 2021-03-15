@@ -5,23 +5,24 @@ using UnityEngine;
 public class LifebarBehavior : MonoBehaviour
 {
     public Transform HealthTransform;
-    private Vector3 newHealth;
-
+    public float SlideTime;
     public void Set(float amount)
     {
-        newHealth = new Vector3(amount, HealthTransform.localScale.y, HealthTransform.localScale.z);
+        StartCoroutine(SetRoutine(amount));
     }
 
-    private void Start()
-    {
-        newHealth = HealthTransform.localScale;
-    }
 
-    private void Update()
+    private IEnumerator SetRoutine(float amount)
     {
-        if (newHealth != null)
+        for (float i = 0.01f; i < SlideTime; i += Time.deltaTime)
         {
-            HealthTransform.localScale = Vector3.Lerp(HealthTransform.localScale, newHealth, 0.05f);
+            HealthTransform.localScale = Vector3.Lerp(HealthTransform.localScale, new Vector3(amount, HealthTransform.localScale.y, HealthTransform.localScale.z), Mathf.Min(1, i / SlideTime));
+            yield return null;
+
         }
+
     }
+    
+
+    
 }
