@@ -31,6 +31,8 @@ public class AttackTextBehavior : MonoBehaviour
     {
         if (CurrentRoutine != null)
         {
+            TextTransform.localPosition = origin;
+            Text.color = originColor;
             StopCoroutine(CurrentRoutine);
         }
         Text.text = txt;
