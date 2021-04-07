@@ -14,9 +14,20 @@ public class PlayerListingsDisplay : MonoBehaviourPunCallbacks
 
     private List<PlayerListing> _listings = new List<PlayerListing>();
 
-    private void AddPlayerListing(Player NewPlayer)
+    public void Start()
+    {
+        GetCurrentRoomPlayers();
+    }
+
+    public void Update()
+    {
+        GetCurrentRoomPlayers();
+    }
+
+    public void AddPlayerListing(Player NewPlayer)
     {
         PlayerListing Listing = Instantiate(_playerListing, _content);
+
         if (Listing != null)
         {
             Listing.SetPlayerInfo(NewPlayer);
@@ -26,13 +37,7 @@ public class PlayerListingsDisplay : MonoBehaviourPunCallbacks
 
     public override void OnPlayerEnteredRoom(Player NewPlayer)
     {
-        //AddPlayerListing(NewPlayer);
-        PlayerListing Listing = Instantiate(_playerListing, _content);
-        if (Listing != null)
-        {
-            Listing.SetPlayerInfo(NewPlayer);
-            _listings.Add(Listing);
-        }
+        AddPlayerListing(NewPlayer);
     }
 
     public override void OnPlayerLeftRoom(Player OtherPlayer)
@@ -49,7 +54,22 @@ public class PlayerListingsDisplay : MonoBehaviourPunCallbacks
     {
         foreach (KeyValuePair<int, Player> PlayerInfo in PhotonNetwork.CurrentRoom.Players)
         {
-            AddPlayerListing(PlayerInfo.Value);
+            bool AlreadyInList = false;
+
+            foreach (PlayerListing ShowedListing in _listings)
+            {
+                if(ShowedListing.Player == PlayerInfo.Value)
+                {
+                    AlreadyInList = true;
+                    break;
+                }
+                    
+            }
+
+            if(!AlreadyInList)
+            {
+                AddPlayerListing(PlayerInfo.Value);
+            }
         }
     }
 }
