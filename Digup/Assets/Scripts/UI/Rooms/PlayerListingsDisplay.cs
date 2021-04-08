@@ -14,30 +14,21 @@ public class PlayerListingsDisplay : MonoBehaviourPunCallbacks
 
     private List<PlayerListing> _listings = new List<PlayerListing>();
 
-    public void Start()
-    {
-        GetCurrentRoomPlayers();
-    }
-
     public void Update()
     {
         GetCurrentRoomPlayers();
     }
 
-    public void AddPlayerListing(Player NewPlayer)
+    public void AddPlayerListing(KeyValuePair<int, Player> PlayerInfo)
     {
         PlayerListing Listing = Instantiate(_playerListing, _content);
 
         if (Listing != null)
         {
-            Listing.SetPlayerInfo(NewPlayer);
+            Listing.SetPlayerInfo(PlayerInfo.Value);
+            Listing.GetComponent<RawImage>().texture = Resources.Load<Texture2D>("Textures/Sprites/GUI/Icons/Player"+PlayerInfo.Key);
             _listings.Add(Listing);
         }
-    }
-
-    public override void OnPlayerEnteredRoom(Player NewPlayer)
-    {
-        AddPlayerListing(NewPlayer);
     }
 
     public override void OnPlayerLeftRoom(Player OtherPlayer)
@@ -68,7 +59,7 @@ public class PlayerListingsDisplay : MonoBehaviourPunCallbacks
 
             if(!AlreadyInList)
             {
-                AddPlayerListing(PlayerInfo.Value);
+                AddPlayerListing(PlayerInfo);
             }
         }
     }
