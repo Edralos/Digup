@@ -57,9 +57,20 @@ public class PlayerListingsDisplay : MonoBehaviourPunCallbacks
                     
             }
 
-            if(!AlreadyInList)
+            if((!AlreadyInList))
             {
                 AddPlayerListing(PlayerInfo);
+            }
+        }
+    }
+
+    public void OnClick_SetPlayerReady()
+    {
+        foreach(PlayerListing Listing in _listings)
+        {
+            if(Listing.Player.NickName == PhotonNetwork.NickName)
+            {
+                Listing.SetReadyToBegin();
             }
         }
     }
