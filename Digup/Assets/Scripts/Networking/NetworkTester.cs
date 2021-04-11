@@ -16,6 +16,7 @@ public class NetworkTester : MonoBehaviourPunCallbacks
         PhotonNetwork.ConnectUsingSettings();
         PhotonNetwork.GameVersion = MasterManager.GameSettings.GameVersion;
         PhotonNetwork.NickName = MasterManager.GameSettings.NickName;
+        PhotonNetwork.AutomaticallySyncScene = true;
 
         Log = GameObject.Find("Log").GetComponent<Text>();
         Log.text = "";
