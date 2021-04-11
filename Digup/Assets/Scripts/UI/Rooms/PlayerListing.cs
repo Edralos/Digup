@@ -16,5 +16,6 @@ public class PlayerListing : MonoBehaviour
     {
         this.Player = Player;
         _text.text = Player.NickName;
+        Console.Log(_text.text);
     }
 }
