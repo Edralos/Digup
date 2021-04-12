@@ -142,24 +142,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b053e0b0e3ef4c4b95ec98ec04f28b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
-  HP: 100
-  Prot: 0
-  Dodge: 0
-  AttakModifiers: 0
-  Accuracy: 0
-  Speed: 0
-  Poison: 0
-  isStunned: 0
-  Burn: 0
-  Bleed: 0000000000000000
-  isParalized: 0
-  isProvoking: 0
-  isProtected: 0
-  isAlert: 0
-  Doped: 0
-  hasWithdrawal: 0
-  BadTrip: 0
+  Character:
+    Name: 
+    IsAlly: 0
+    MaxHp: 0
+    HP: 0
+    Prot: 0
+    Dodge: 0
+    AttakModifiers: 0
+    Accuracy: 0
+    Speed: 0
+    Poison: 0
+    IsStunned: 0
+    Burn: 0
+    Bleed: 
+    IsParalized: 0
+    IsProvoking: 0
+    IsProtected: 0
+    IsAlert: 0
+    Doped: 0
+    HasWithdrawal: 0
+    BadTrip: 0
   Lifebar: {fileID: 7297444424095322998}
   AttackTextBehavior: {fileID: 7058062574037046966}
 --- !u!1 &6109430802957451927
