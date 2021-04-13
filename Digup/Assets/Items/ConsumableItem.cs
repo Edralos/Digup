@@ -11,4 +11,6 @@ public class ConsumableItem : Item
     {
         Effect = effect;
     }
+
+
 }

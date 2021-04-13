@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Item
+public abstract class Item : ICloneable
 {
     public string Name;
     public string Description;
@@ -15,4 +16,8 @@ public abstract class Item
         FlavorText = flavor;
     }
 
+    public object Clone()
+    {
+        return (Item)this.MemberwiseClone();
+    }
 }

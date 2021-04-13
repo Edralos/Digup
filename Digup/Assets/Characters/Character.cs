@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class Character
+public class Character : ICloneable
 {
     public string Name;
     public bool IsAlly;
@@ -30,6 +30,7 @@ public class Character
     public bool HasWithdrawal = false;
     public bool BadTrip = false;
 
+
     public Character(string name, bool isAlly, int maxHP, int prot, int dodge, int atkMods, int acc, int speed)
     {
         Name = name;
@@ -42,7 +43,11 @@ public class Character
         Accuracy = acc;
         Speed = speed;
     }
-    
 
-
+    public object Clone()
+    {
+        Character copy = this.MemberwiseClone() as Character;
+        copy.Bleed = new int[] { 0, 0 };
+        return copy;
+    }
 }

@@ -25,7 +25,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: Project
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -49,14 +49,18 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 678, y: 492}
-  m_MaxSize: {x: 14001, y: 14042}
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
+<<<<<<< develop
 <<<<<<< develop
   controlID: 220
 =======
   controlID: 17
 >>>>>>> Début items (archi), Effects, début GameData
+=======
+  controlID: 88
+>>>>>>> types utilisés dans les Game Data passés en Cloneable
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -279,10 +283,14 @@ MonoBehaviour:
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
 <<<<<<< develop
+<<<<<<< develop
   controlID: 221
 =======
   controlID: 68
 >>>>>>> Début items (archi), Effects, début GameData
+=======
+  controlID: 118
+>>>>>>> types utilisés dans les Game Data passés en Cloneable
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -315,8 +323,12 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
+<<<<<<< develop
   controlID: 69
 >>>>>>> Début items (archi), Effects, début GameData
+=======
+  controlID: 119
+>>>>>>> types utilisés dans les Game Data passés en Cloneable
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -351,8 +363,8 @@ MonoBehaviour:
     y: 0
     width: 1078
     height: 671
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -430,15 +442,20 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
 <<<<<<< develop
+<<<<<<< develop
     - Assets
 =======
     - Assets/Items
 >>>>>>> Début items (archi), Effects, début GameData
+=======
+    - Assets/Scripts/Game
+>>>>>>> types utilisés dans les Game Data passés en Cloneable
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
+<<<<<<< develop
 <<<<<<< develop
   - Assets
   m_LastFoldersGridSize: 16
@@ -452,16 +469,26 @@ MonoBehaviour:
     m_ExpandedIDs: 00000000123b00002c3b0000f64500003e46000000ca9a3b
 =======
   - Assets/Items
+=======
+  - Assets/Scripts/Game
+>>>>>>> types utilisés dans les Game Data passés en Cloneable
   m_LastFoldersGridSize: 96
   m_LastProjectPath: G:\repo\Digup\Digup
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< develop
     scrollPos: {x: 0, y: 120}
     m_SelectedIDs: 263f0000
     m_LastClickedID: 16166
     m_ExpandedIDs: 00000000103f0000123f0000143f0000163f0000183f0000363f000000ca9a3b
 >>>>>>> Début items (archi), Effects, début GameData
+=======
+    scrollPos: {x: 0, y: 89}
+    m_SelectedIDs: ac3f0000
+    m_LastClickedID: 16300
+    m_ExpandedIDs: 000000001c3f0000203f0000223f0000243f0000443f000000ca9a3b
+>>>>>>> types utilisés dans les Game Data passés en Cloneable
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -490,10 +517,14 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< develop
+<<<<<<< develop
     m_ExpandedIDs: 00000000123b000000ca9a3b
 =======
     m_ExpandedIDs: 00000000103f0000123f0000143f0000163f0000183f0000
 >>>>>>> Début items (archi), Effects, début GameData
+=======
+    m_ExpandedIDs: 000000001c3f00001e3f0000203f0000223f0000243f0000
+>>>>>>> types utilisés dans les Game Data passés en Cloneable
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -638,6 +669,7 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
 <<<<<<< develop
+<<<<<<< develop
       m_SelectedIDs: 5a0b0000
       m_LastClickedID: 0
       m_ExpandedIDs: c2f5ffff50f6ffff18460000
@@ -646,6 +678,11 @@ MonoBehaviour:
       m_LastClickedID: 0
       m_ExpandedIDs: 5ef8ffff38440000
 >>>>>>> Début items (archi), Effects, début GameData
+=======
+      m_SelectedIDs: 640e0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 50fbffff
+>>>>>>> types utilisés dans les Game Data passés en Cloneable
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -717,6 +754,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_Position:
 <<<<<<< develop
+<<<<<<< develop
     m_Target: {x: 421.40472, y: 210.88618, z: 52.98033}
     speed: 2
     m_Value: {x: 421.40472, y: 210.88618, z: 52.98033}
@@ -725,6 +763,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 11.16, y: -4.7708473, z: 34.443287}
 >>>>>>> Début items (archi), Effects, début GameData
+=======
+    m_Target: {x: -2.2739992, y: 7.408572, z: -12.699731}
+    speed: 2
+    m_Value: {x: -2.2739992, y: 7.408572, z: -12.699731}
+>>>>>>> types utilisés dans les Game Data passés en Cloneable
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -772,6 +815,7 @@ MonoBehaviour:
     m_gridOpacity: 0.5
   m_Rotation:
 <<<<<<< develop
+<<<<<<< develop
     m_Target: {x: -0.0005953984, y: 0.018267442, z: 0.00022180637, w: 0.99987787}
     speed: 2
     m_Value: {x: 0.0005953984, y: -0.018267442, z: -0.00022180637, w: -0.9998778}
@@ -781,13 +825,20 @@ MonoBehaviour:
     m_Value: 251.99162
 =======
     m_Target: {x: 0.21198627, y: 0.051869545, z: -0.011182467, w: 0.975865}
+=======
+    m_Target: {x: 0.29917592, y: -0.022512484, z: 0.0075172386, w: 0.9539871}
+>>>>>>> types utilisés dans les Game Data passés en Cloneable
     speed: 2
-    m_Value: {x: 0.21197927, y: 0.05186783, z: -0.011182099, w: 0.97583276}
+    m_Value: {x: 0.29915184, y: -0.022510674, z: 0.0075166337, w: 0.95391035}
   m_Size:
-    m_Target: 37.944252
+    m_Target: 5.0935802
     speed: 2
+<<<<<<< develop
     m_Value: 37.944252
 >>>>>>> Début items (archi), Effects, début GameData
+=======
+    m_Value: 5.0935802
+>>>>>>> types utilisés dans les Game Data passés en Cloneable
   m_Ortho:
     m_Target: 1
     speed: 2

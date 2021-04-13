@@ -9,5 +9,9 @@ public class TrinketItem : EquipmentItem
     {
     }
 
-
+    public new object Clone()
+    {
+        var clone = (TrinketItem)base.Clone();
+        return clone;
+    }
 }
