@@ -1,0 +1,45 @@
+{
+  "Flower": {
+    "EquipmentType": 0,
+    "Effect": {
+      "Target": 0,
+      "EffectTypes": [
+        0
+      ],
+      "StatusAmount": null,
+      "CharacterStatAmount": null,
+      "LifeAmounts": [
+        7
+      ]
+    },
+    "Name": "Flower",
+    "Description": "Heals 7% of your life total",
+    "FlavorText": "Something to give to a loved one when you get back home, either in their hand or on their grave"
+  },
+  "Thingy": {
+    "EquipmentType": 0,
+    "Effect": {
+      "Target": 4,
+      "EffectTypes": [
+        0,
+        1,
+        2
+      ],
+      "StatusAmount": {
+        "BLEED": 6,
+        "POISON": 8
+      },
+      "CharacterStatAmount": {
+        "DODGE": 9,
+        "MAX_HP": -3
+      },
+      "LifeAmounts": [
+        7,
+        -7
+      ]
+    },
+    "Name": "Thingy",
+    "Description": "???",
+    "FlavorText": "A strange object, who knows what it does"
+  }
+}
