@@ -1,0 +1,52 @@
+{
+  "Herborist": {
+    "Name": "Herborist",
+    "IsAlly": true,
+    "MaxHp": 40,
+    "HP": 40,
+    "Prot": 10,
+    "Dodge": 20,
+    "AttakModifiers": 0,
+    "Accuracy": 90,
+    "Speed": 15,
+    "Poison": 0,
+    "IsStunned": false,
+    "Burn": 0,
+    "Bleed": [
+      0,
+      0
+    ],
+    "IsParalized": false,
+    "IsProvoking": false,
+    "IsProtected": false,
+    "IsAlert": false,
+    "Doped": 0,
+    "HasWithdrawal": false,
+    "BadTrip": false
+  },
+  "Captain": {
+    "Name": "Captain",
+    "IsAlly": true,
+    "MaxHp": 60,
+    "HP": 60,
+    "Prot": 15,
+    "Dodge": 20,
+    "AttakModifiers": 0,
+    "Accuracy": 80,
+    "Speed": 10,
+    "Poison": 0,
+    "IsStunned": false,
+    "Burn": 0,
+    "Bleed": [
+      0,
+      0
+    ],
+    "IsParalized": false,
+    "IsProvoking": false,
+    "IsProtected": false,
+    "IsAlert": false,
+    "Doped": 0,
+    "HasWithdrawal": false,
+    "BadTrip": false
+  }
+}

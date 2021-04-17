@@ -25,10 +25,14 @@ m_ProjectFiles:
     m_ModificationDate:
       serializedVersion: 2
 <<<<<<< develop
+<<<<<<< develop
       ticks: 637542603261780247
 =======
       ticks: 637537548480677289
 >>>>>>> Début items (archi), Effects, début GameData
+=======
+      ticks: 637540287186826566
+>>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
     m_Hash: 1554650196
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -2650,10 +2654,20 @@ m_PackageAssets:
       errors: []
       versions:
         all:
+        - 0.1.5-preview
+        - 0.1.6-preview
+        - 0.1.9-preview
+        - 1.0.0
         - 1.0.5
+        - 1.0.6
         compatible:
+        - 0.1.5-preview
+        - 0.1.6-preview
+        - 0.1.9-preview
+        - 1.0.0
         - 1.0.5
-        verified: 1.0.5
+        - 1.0.6
+        verified: 1.0.6
       dependencies: []
       resolvedDependencies: []
       keywords:
@@ -2672,7 +2686,7 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 0
+      datePublishedTicks: 637413148740000000
       documentationUrl: 
       hasRepository: 1
       repository:

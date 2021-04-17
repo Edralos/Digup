@@ -1,27 +1,86 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
-public enum EffectType { HEAL, DAMAGE, BUFF, DEBUFF, HEAL_STATUS, STATUS }
-public enum TargetType { SELF, ALLY, FOE, ALL_ALLIES, ALL_FOES }
+public enum EffectType { LIFE, CHARACTERSTAT, STATUS }
+public enum TargetType { SELF, ALLY, ENNEMY, ALL_ALLIES, ALL_FOES }
 public enum StatusType { NONE, BURN, BLEED, POISON, STUN, PARALIZE, PROVOKE, ALERT, DOPE, WITHDRAWAL, BAD_TRIP, }
-public enum StatType { NONE, MAX_HP, PROT, ATK, DODGE, SPEED }
+public enum CharacterStatType { NONE, MAX_HP, PROT, ATK, DODGE, SPEED }
+
 public class Effect : ICloneable
 {
 
-    TargetType Target;
-    List<EffectType> Effects;
-    Dictionary<StatusType, int> StatusAmount;
-    Dictionary<StatType, int> StatAmount;
-    int SimpleAmount;
+    // NOTE : les effets < 0 sont des retraits. Ex : LIFE avec amount < 0 => dégats sinon heal, STATUS positif => inflige un statut sinon enlève le statut
+    public TargetType Target;
+    public List<EffectType> EffectTypes;
+    // on part du principe que les dictionnaires sont tremlis en accord avec les effect types possibles, la liste des Effect type permet 
+    // seulement de vérifier qu'un dictionnaire est rempli
 
+    public Dictionary<StatusType, int> StatusAmount;
+    public Dictionary<CharacterStatType, int> CharacterStatAmount;
+    public List<int> LifeAmounts;
 
+    public Effect(TargetType targetType, IEnumerable<EffectType> effects, IEnumerable<int> lifeamounts = null, Dictionary<StatusType, int> statusamount = null, Dictionary<CharacterStatType, int> statamount = null)
+    {
+        Target = targetType;
+        EffectTypes = effects.Distinct().ToList();
+        //check correlation entre types d'effets
+        foreach (EffectType effectType in EffectTypes)
+        {
+            if (effectType == EffectType.CHARACTERSTAT && (statamount?.Count < 1 || statamount == null))
+            {
+                throw new ArgumentException("Stat effect has been declared but has no associated amounts");
+            }
+            else if (effectType == EffectType.STATUS && (statusamount?.Count < 1 || statusamount == null))
+            {
+
+                throw new ArgumentException("Status effect has been declared but has no associated amounts");
+            }
+            else if (effectType == EffectType.LIFE && (lifeamounts?.Count() < 1 || lifeamounts == null))
+            {
+
+                throw new ArgumentException("Life effect has been declared but has no associated amounts");
+            }
+        }
+        if (lifeamounts == null)
+        {
+            LifeAmounts = null;
+        }
+        else
+        {
+
+            LifeAmounts = new List<int>(lifeamounts);
+        }
+
+        if (statamount == null)
+        {
+
+            CharacterStatAmount = null;
+        }
+        else
+        {
+
+            CharacterStatAmount = statamount;
+        }
+
+        if (statusamount == null)
+        {
+
+            StatusAmount = null;
+        }
+        else
+        {
+
+            StatusAmount = statusamount;
+        }
+    }
 
     public object Clone()
     {
-        Effect clone = (Effect)this.MemberwiseClone();
-        clone.Effects = new List<EffectType>(Effects);
+        Effect clone = (Effect)MemberwiseClone();
+        clone.EffectTypes = new List<EffectType>(EffectTypes);
         clone.StatusAmount = new Dictionary<StatusType, int>(StatusAmount);
-        clone.StatAmount = new Dictionary<StatType, int>(StatAmount);
+        clone.CharacterStatAmount = new Dictionary<CharacterStatType, int>(CharacterStatAmount);
         return clone;
 
     }

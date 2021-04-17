@@ -1,0 +1,43 @@
+{
+  "ThingyConsume": {
+    "Effect": {
+      "Target": 4,
+      "EffectTypes": [
+        0,
+        1,
+        2
+      ],
+      "StatusAmount": {
+        "BLEED": 6,
+        "POISON": 8
+      },
+      "CharacterStatAmount": {
+        "DODGE": 9,
+        "MAX_HP": -3
+      },
+      "LifeAmounts": [
+        7,
+        -7
+      ]
+    },
+    "Name": "Thingy",
+    "Description": "???",
+    "FlavorText": "A strange object, who knows what it does, this one you eat or drink or whatever"
+  },
+  "Potion": {
+    "Effect": {
+      "Target": 0,
+      "EffectTypes": [
+        0
+      ],
+      "StatusAmount": null,
+      "CharacterStatAmount": null,
+      "LifeAmounts": [
+        5
+      ]
+    },
+    "Name": "Potion",
+    "Description": "Heals 5% of your life total",
+    "FlavorText": "A fresh brew from the best herborist of the caves"
+  }
+}
