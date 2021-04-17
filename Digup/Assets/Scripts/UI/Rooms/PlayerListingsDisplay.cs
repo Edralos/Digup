@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
+using ExitGames.Client.Photon;
 
 public class PlayerListingsDisplay : MonoBehaviourPunCallbacks
 {
@@ -13,6 +14,8 @@ public class PlayerListingsDisplay : MonoBehaviourPunCallbacks
     private PlayerListing _playerListing;
 
     private List<PlayerListing> _listings = new List<PlayerListing>();
+
+    private const byte PLAYER_LIST_UPDATING_EVENT = 1;
 
     public void Update()
     {
@@ -41,6 +44,11 @@ public class PlayerListingsDisplay : MonoBehaviourPunCallbacks
         }
     }
 
+    /*public override void OnPlayerEnteredRoom(Player OtherPlayer)
+    {
+        GetCurrentRoomPlayers();
+    }*/
+
     private void GetCurrentRoomPlayers()
     {
         foreach (KeyValuePair<int, Player> PlayerInfo in PhotonNetwork.CurrentRoom.Players)
@@ -52,7 +60,11 @@ public class PlayerListingsDisplay : MonoBehaviourPunCallbacks
                 if(ShowedListing.Player == PlayerInfo.Value)
                 {
                     AlreadyInList = true;
-                    break;
+                    
+                    if(ShowedListing.IsReady == true)
+                    {
+                        ShowedListing.ReadyIcon().transform.localScale = new Vector3(1, 1, 1);
+                    }
                 }
                     
             }
@@ -70,7 +82,7 @@ public class PlayerListingsDisplay : MonoBehaviourPunCallbacks
         {
             if(Listing.Player.NickName == PhotonNetwork.NickName)
             {
-                Listing.SetReadyToBegin();
+                Listing.SetIsReady();
             }
         }
     }

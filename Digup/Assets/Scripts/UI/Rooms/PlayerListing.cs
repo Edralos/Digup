@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Photon.Pun;
 using Photon.Realtime;
+using Photon.Pun;
+using ExitGames.Client.Photon;
 
-public class PlayerListing : MonoBehaviour, IPunObservable
+public class PlayerListing : MonoBehaviourPun
 {
     [SerializeField]
     private Text _text;
     [SerializeField]
     private GameObject _readyIcon;
+
+    private const byte SET_READY_EVENT = 0;
 
     public Player Player { get; private set; }
 
@@ -21,22 +24,39 @@ public class PlayerListing : MonoBehaviour, IPunObservable
         _readyIcon.transform.localScale = Vector3.zero;
     }
 
-    public bool IsReady { get; private set; }
+    public bool IsReady { get; set; }
 
-    public void SetReadyToBegin()
+    public GameObject ReadyIcon()
     {
-        _readyIcon.transform.localScale = new Vector3(1, 1, 1);
+        return _readyIcon;
     }
 
-    public void OnPhotonSerializeView(PhotonStream Stream, PhotonMessageInfo Message)
+    public void SetIsReady()
     {
-        if(Stream.IsWriting)
+        IsReady = true;
+        object[] SendedObjects = new object[] { Player, IsReady };
+        PhotonNetwork.RaiseEvent(SET_READY_EVENT, SendedObjects, RaiseEventOptions.Default, SendOptions.SendUnreliable);
+    }
+
+    private void OnEnable()
+    {
+        PhotonNetwork.NetworkingClient.EventReceived += NetworkingClient_EventReceived;
+    }
+
+    private void OnDisable()
+    {
+        PhotonNetwork.NetworkingClient.EventReceived -= NetworkingClient_EventReceived;
+    }
+
+    private void NetworkingClient_EventReceived(EventData obj)
+    {
+        if(obj.Code == SET_READY_EVENT)
         {
-            Stream.SendNext(_readyIcon.transform.localScale);
-        }
-        if (Stream.IsReading)
-        {
-            _readyIcon.transform.localScale = (Vector3) Stream.ReceiveNext();
+            object[] ReceivedObjects = (object[]) obj.CustomData;
+            if (Player == (Player) ReceivedObjects[0])
+            {
+                IsReady = (bool) ReceivedObjects[1];
+            }
         }
     }
 }
