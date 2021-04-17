@@ -6,7 +6,6 @@ using UnityEngine;
 public class Character : ICloneable
 {
     public string Name;
-    public bool IsAlly;
     public int MaxHp;
     public int HP;
     public int Prot;
@@ -30,10 +29,9 @@ public class Character : ICloneable
     public bool BadTrip = false;
 
 
-    public Character(string name, bool isAlly, int maxHP, int prot, int dodge, int atkMods, int acc, int speed)
+    public Character(string name, int maxHP, int prot, int dodge, int atkMods, int acc, int speed)
     {
         Name = name;
-        IsAlly = isAlly;
         MaxHp = maxHP;
         HP = maxHP;
         Prot = prot;

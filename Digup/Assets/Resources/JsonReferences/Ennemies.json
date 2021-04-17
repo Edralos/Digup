@@ -1,7 +1,7 @@
 {
   "Rat soldier": {
+    "Stage": "Tunnels",
     "Name": "Rat Soldier",
-    "IsAlly": false,
     "MaxHp": 20,
     "HP": 20,
     "Prot": 5,
@@ -25,8 +25,8 @@
     "BadTrip": false
   },
   "Squarab": {
+    "Stage": "Tunnels",
     "Name": "Squarab",
-    "IsAlly": false,
     "MaxHp": 10,
     "HP": 10,
     "Prot": 5,
