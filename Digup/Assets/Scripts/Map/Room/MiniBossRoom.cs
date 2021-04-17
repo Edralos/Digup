@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MiniBossRoom : StageRoom
 {
-    public MiniBossRoom() : base()
+    public MiniBossRoom() : this(0)
     {
 
     }
-    public MiniBossRoom(int Depth) : base(Depth)
+    public MiniBossRoom(int depth) : base(depth)
     {
-
+        Name = "MiniBoss Room";
     }
 }

@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class BossRoom : StageRoom
 {
-    //private RoomDifficulty Difficulty;
-    public BossRoom(int Depth) : base(Depth)
+    public BossRoom() : this(0)
     {
 
+    }
+    public BossRoom(int depth) : base(depth)
+    {
+        Name = "Boss Room";
     }
 }

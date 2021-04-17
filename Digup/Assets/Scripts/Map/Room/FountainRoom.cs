@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class FountainRoom : StageRoom
 {
-    public FountainRoom() : base()
+    public FountainRoom() : this(0)
     {
 
     }
-    public FountainRoom(int Depth) : base(Depth)
+    public FountainRoom(int depth) : base(depth)
     {
-
+        Name = "Fountain Room";
     }
 }

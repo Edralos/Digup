@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class TrapRoom : StageRoom
 {
-    public TrapRoom() : base()
+    public TrapRoom() : this(0)
     {
 
     }
-    public TrapRoom(int Depth) : base(Depth)
+    public TrapRoom(int depth) : base(depth)
     {
-
+        Name = "Trap Room";
     }
 }

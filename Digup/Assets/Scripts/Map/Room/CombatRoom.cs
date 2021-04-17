@@ -8,11 +8,14 @@ using UnityEngine;
  */
 public class CombatRoom : StageRoom
 {
-
-
-    public CombatRoom(int Depth) : base(Depth)
+    public CombatRoom(): this(0)
     {
-        
+
+    }
+
+    public CombatRoom(int depth) : base(depth)
+    {
+        Name = "Combat Room";
     }
 
 }

@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class StartRoom : StageRoom
 {
-    public StartRoom(int Depth) : base(Depth)
+    public StartRoom() : this(0)
     {
 
+    }
+    public StartRoom(int depth) : base(depth)
+    {
+        Name = "Start Room";
     }
 }

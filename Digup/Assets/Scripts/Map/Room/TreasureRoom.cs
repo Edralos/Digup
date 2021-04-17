@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class TreasureRoom : StageRoom
 {
-    public TreasureRoom() : base()
+    public TreasureRoom() : this(0)
     {
 
     }
-    public TreasureRoom(int Depth) : base(Depth)
+    public TreasureRoom(int depth) : base(depth)
     {
-
+        Name = "Treasure Room";
     }
 }
