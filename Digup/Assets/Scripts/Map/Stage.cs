@@ -16,7 +16,7 @@ public class Stage : MonoBehaviour
 
     public void InitStage()
     {
-        Debug.Log("Start Init");
+        Debug.Log("------------------------\nStart Init");
 
         /*-----------------------------------------------*/
         /*         Randomly generate the stages          */
@@ -31,13 +31,12 @@ public class Stage : MonoBehaviour
         int MaxRoomsInPool = (MaxDepth - 4) * 3; // 3 is the max width
         while(Pool.Count < MaxRoomsInPool)
         {
-            int Rand = (int) new System.Random().Next(0,100);
-            Debug.Log("Random room number: "+ Rand);
-            
+            Debug.Log("Pool Count:" + Pool.Count + " - Max Rooms:" + MaxDepth);
             /**
              * Les Rooms sont mises à 0 de Profondeur 
              * et sont mises à jour dans les ajouts suivants
              */
+            int Rand = (int) new System.Random().Next(0,100);
             if(Rand < 50) { //50% of Combat rooms
                 Pool.Add(new CombatRoom(0));
             } else if (Rand < 75) { //25% of Treasure or Trap rooms
@@ -108,6 +107,9 @@ public class Stage : MonoBehaviour
             CurrentRooms = new List<StageRoom>(NextRooms);
             NextRooms = new List<StageRoom>();
         }
+
+
+        Debug.Log("------------------------\nInit finished");
     }
 
     new private string ToString()
@@ -123,10 +125,13 @@ public class Stage : MonoBehaviour
         return StringRet;
     }
 
+
+
     // Start is called before the first frame update
     void Start()
     {
-        //ToString();
+        Stage Stage = new Stage("Tunnels", 12);
+        Debug.Log("Stage = "+ Stage.ToString());
     }
 
     // Update is called once per frame
