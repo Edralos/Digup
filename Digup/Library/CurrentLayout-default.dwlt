@@ -8,9 +8,12 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+<<<<<<< HEAD
 <<<<<<< develop
   m_EditorHideFlags: 0
 =======
+=======
+>>>>>>> CombatSystem
   m_EditorHideFlags: 1
 >>>>>>> Début items (archi), Effects, début GameData
   m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
@@ -52,6 +55,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 342}
   m_MaxSize: {x: 12004, y: 8042}
   vertical: 0
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
 <<<<<<< develop
@@ -65,6 +69,9 @@ MonoBehaviour:
 =======
   controlID: 17
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+  controlID: 17
+>>>>>>> CombatSystem
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -80,6 +87,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
     x: 1287
@@ -111,6 +119,18 @@ MonoBehaviour:
   - {fileID: 15}
   - {fileID: 13}
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+    x: 675
+    y: 0
+    width: 283
+    height: 938
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 15}
+  m_Panes:
+  - {fileID: 15}
+  - {fileID: 13}
+>>>>>>> CombatSystem
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &4
@@ -130,6 +150,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
     width: 250
@@ -149,6 +170,8 @@ MonoBehaviour:
   - {fileID: 15}
 >>>>>>> Début items (archi), Effects, début GameData
 =======
+=======
+>>>>>>> CombatSystem
     width: 206
     height: 665
   m_MinSize: {x: 201, y: 221}
@@ -156,7 +179,10 @@ MonoBehaviour:
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
+<<<<<<< HEAD
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+>>>>>>> CombatSystem
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &5
@@ -175,6 +201,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
     y: 596
@@ -207,11 +234,23 @@ MonoBehaviour:
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
+=======
+    y: 665
+    width: 675
+    height: 273
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 19}
+  m_Panes:
+>>>>>>> CombatSystem
   - {fileID: 19}
   - {fileID: 14}
   m_Selected: 0
   m_LastSelected: 1
+<<<<<<< HEAD
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+>>>>>>> CombatSystem
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -232,6 +271,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
 <<<<<<< develop
     width: 1920
     height: 997
@@ -241,6 +281,11 @@ MonoBehaviour:
     height: 988
   m_MinSize: {x: 875, y: 392}
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+    width: 958
+    height: 988
+  m_MinSize: {x: 875, y: 392}
+>>>>>>> CombatSystem
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
@@ -268,6 +313,7 @@ MonoBehaviour:
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
   m_LoadedToolbars:
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
   - {fileID: 18}
@@ -280,6 +326,10 @@ MonoBehaviour:
   - {fileID: 20}
   m_MainToolbar: {fileID: 20}
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+  - {fileID: 20}
+  m_MainToolbar: {fileID: 20}
+>>>>>>> CombatSystem
   m_LastLoadedLayoutName: 
 --- !u!114 &8
 MonoBehaviour:
@@ -321,6 +371,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
     width: 1287
@@ -348,6 +399,14 @@ MonoBehaviour:
   vertical: 1
   controlID: 117
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+    width: 675
+    height: 938
+  m_MinSize: {x: 403, y: 342}
+  m_MaxSize: {x: 8003, y: 8042}
+  vertical: 1
+  controlID: 117
+>>>>>>> CombatSystem
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -367,6 +426,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
     width: 1287
@@ -395,6 +455,14 @@ MonoBehaviour:
   vertical: 0
   controlID: 118
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+    width: 675
+    height: 665
+  m_MinSize: {x: 403, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
+  vertical: 0
+  controlID: 118
+>>>>>>> CombatSystem
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -410,6 +478,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
     x: 250
@@ -441,6 +510,20 @@ MonoBehaviour:
   - {fileID: 18}
   - {fileID: 12}
   m_Selected: 0
+=======
+    x: 206
+    y: 0
+    width: 469
+    height: 665
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 17}
+  m_Panes:
+  - {fileID: 17}
+  - {fileID: 18}
+  - {fileID: 12}
+  m_Selected: 0
+>>>>>>> CombatSystem
   m_LastSelected: 2
 --- !u!114 &12
 MonoBehaviour:
@@ -492,12 +575,16 @@ MonoBehaviour:
     width: 566
     height: 926
   m_ViewDataDictionary: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< develop
 --- !u!114 &13
 >>>>>>> Début items (archi), Effects, début GameData
 =======
 --- !u!114 &14
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+--- !u!114 &14
+>>>>>>> CombatSystem
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -541,6 +628,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
 <<<<<<< develop
@@ -554,11 +642,15 @@ MonoBehaviour:
 =======
     - Assets/Scripts/Networking
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+    - Assets/Scripts/Networking
+>>>>>>> CombatSystem
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
 <<<<<<< develop
@@ -580,11 +672,15 @@ MonoBehaviour:
 =======
   - Assets/Scripts/Networking
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+  - Assets/Scripts/Networking
+>>>>>>> CombatSystem
   m_LastFoldersGridSize: 96
   m_LastProjectPath: G:\repo\Digup\Digup
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
     scrollPos: {x: 0, y: 120}
@@ -599,11 +695,16 @@ MonoBehaviour:
     m_ExpandedIDs: 000000001c3f0000203f0000223f0000243f0000443f000000ca9a3b
 >>>>>>> types utilisés dans les Game Data passés en Cloneable
 =======
+=======
+>>>>>>> CombatSystem
     scrollPos: {x: 0, y: 197}
     m_SelectedIDs: 583f0000
     m_LastClickedID: 16216
     m_ExpandedIDs: 00000000243f0000263f0000283f00002a3f00002c3f00002e3f0000303f0000323f0000343f0000383f0000523f0000c03f000000ca9a3b
+<<<<<<< HEAD
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+>>>>>>> CombatSystem
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -631,6 +732,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
 <<<<<<< develop
@@ -644,6 +746,9 @@ MonoBehaviour:
 =======
     m_ExpandedIDs: 00000000243f0000263f0000283f00002a3f00002c3f00002e3f0000303f0000323f0000343f0000
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+    m_ExpandedIDs: 00000000243f0000263f0000283f00002a3f00002c3f00002e3f0000303f0000323f0000343f0000
+>>>>>>> CombatSystem
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -687,6 +792,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
       m_ClientGUIView: {fileID: 5}
@@ -696,6 +802,9 @@ MonoBehaviour:
 =======
       m_ClientGUIView: {fileID: 5}
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+      m_ClientGUIView: {fileID: 5}
+>>>>>>> CombatSystem
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -707,6 +816,7 @@ MonoBehaviour:
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 281
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
 --- !u!114 &13
@@ -716,6 +826,9 @@ MonoBehaviour:
 =======
 --- !u!114 &15
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+--- !u!114 &15
+>>>>>>> CombatSystem
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -735,6 +848,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
     x: 1287
@@ -747,11 +861,16 @@ MonoBehaviour:
 >>>>>>> Début items (archi), Effects, début GameData
     height: 926
 =======
+=======
+>>>>>>> CombatSystem
     x: 676
     y: 81
     width: 282
     height: 917
+<<<<<<< HEAD
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+>>>>>>> CombatSystem
   m_ViewDataDictionary: {fileID: 0}
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 
@@ -765,6 +884,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
 --- !u!114 &14
@@ -774,6 +894,9 @@ MonoBehaviour:
 =======
 --- !u!114 &16
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+--- !u!114 &16
+>>>>>>> CombatSystem
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -793,6 +916,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< develop
     x: 0
     y: 73
@@ -804,15 +928,21 @@ MonoBehaviour:
     height: 650
 >>>>>>> Début items (archi), Effects, début GameData
 =======
+=======
+>>>>>>> CombatSystem
     x: 1
     y: 81
     width: 205
     height: 644
+<<<<<<< HEAD
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+>>>>>>> CombatSystem
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
 <<<<<<< develop
@@ -832,6 +962,11 @@ MonoBehaviour:
       m_LastClickedID: 0
       m_ExpandedIDs: 50fbffff
 >>>>>>> types utilisés dans les Game Data passés en Cloneable
+=======
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 50fbffff
+>>>>>>> CombatSystem
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -855,6 +990,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 6a451694a830bef429fa9e9fe3f88594
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
 --- !u!114 &15
@@ -864,6 +1000,9 @@ MonoBehaviour:
 =======
 --- !u!114 &17
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+--- !u!114 &17
+>>>>>>> CombatSystem
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -883,6 +1022,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
     x: 250
@@ -896,11 +1036,16 @@ MonoBehaviour:
     height: 650
 >>>>>>> Début items (archi), Effects, début GameData
 =======
+=======
+>>>>>>> CombatSystem
     x: 207
     y: 81
     width: 467
     height: 644
+<<<<<<< HEAD
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+>>>>>>> CombatSystem
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: 68391d695b1f6d346896e4a7b46535c1
@@ -913,6 +1058,7 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
 <<<<<<< develop
@@ -934,6 +1080,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -2.4064922, y: 6.5142956, z: 3.8010826}
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+    m_Target: {x: -2.4064922, y: 6.5142956, z: 3.8010826}
+    speed: 2
+    m_Value: {x: -2.4064922, y: 6.5142956, z: 3.8010826}
+>>>>>>> CombatSystem
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -980,6 +1131,7 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
 <<<<<<< develop
@@ -998,11 +1150,15 @@ MonoBehaviour:
 =======
     m_Target: {x: 0.28656352, y: -0.08713395, z: 0.026630279, w: 0.9538042}
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+    m_Target: {x: 0.28656352, y: -0.08713395, z: 0.026630279, w: 0.9538042}
+>>>>>>> CombatSystem
     speed: 2
     m_Value: {x: 0.2865402, y: -0.087126866, z: 0.026628114, w: 0.95372665}
   m_Size:
     m_Target: 34.92761
     speed: 2
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
     m_Value: 37.944252
@@ -1013,6 +1169,9 @@ MonoBehaviour:
 =======
     m_Value: 34.92761
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+    m_Value: 34.92761
+>>>>>>> CombatSystem
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1037,6 +1196,7 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
 --- !u!114 &16
@@ -1046,6 +1206,9 @@ MonoBehaviour:
 =======
 --- !u!114 &18
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+--- !u!114 &18
+>>>>>>> CombatSystem
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1065,12 +1228,15 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< develop
     x: 200
     y: 73.6
     width: 828.4
     height: 439
 =======
+=======
+>>>>>>> CombatSystem
     x: 434
     y: 73
     width: 888
@@ -1083,11 +1249,15 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
+<<<<<<< HEAD
 <<<<<<< develop
   m_TargetSize: {x: 828.4, y: 418}
 =======
   m_TargetSize: {x: 888, y: 629}
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+  m_TargetSize: {x: 888, y: 629}
+>>>>>>> CombatSystem
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -1102,12 +1272,15 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
+<<<<<<< HEAD
 <<<<<<< develop
     m_HBaseRangeMin: -414.2
     m_HBaseRangeMax: 414.2
     m_VBaseRangeMin: -219.5
     m_VBaseRangeMax: 219.5
 =======
+=======
+>>>>>>> CombatSystem
     m_HBaseRangeMin: -444
     m_HBaseRangeMax: 444
     m_VBaseRangeMin: -314.5
@@ -1141,13 +1314,17 @@ MonoBehaviour:
       height: 629
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 444, y: 314.5}
+<<<<<<< HEAD
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+>>>>>>> CombatSystem
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< develop
       x: -414.2
       y: -219.5
@@ -1157,6 +1334,8 @@ MonoBehaviour:
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 828.4, y: 439}
 =======
+=======
+>>>>>>> CombatSystem
       x: -444
       y: -314.5
       width: 888
@@ -1164,12 +1343,16 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 888, y: 650}
+<<<<<<< HEAD
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+>>>>>>> CombatSystem
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
 --- !u!114 &17
@@ -1179,6 +1362,9 @@ MonoBehaviour:
 =======
 --- !u!114 &19
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+--- !u!114 &19
+>>>>>>> CombatSystem
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1198,6 +1384,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< develop
     x: 0
 <<<<<<< develop
@@ -1221,6 +1408,14 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &20
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+    x: 1
+    y: 746
+    width: 674
+    height: 252
+  m_ViewDataDictionary: {fileID: 0}
+--- !u!114 &20
+>>>>>>> CombatSystem
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

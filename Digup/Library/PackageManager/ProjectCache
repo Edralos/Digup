@@ -1,14 +1,19 @@
 m_ProjectFiles:
   m_ManifestFileStatus:
+<<<<<<< HEAD
 <<<<<<< develop
     m_FilePath: D:/Unity Projects/Projet Assimilation/Digup/Digup/Packages/manifest.json
 =======
     m_FilePath: G:/repo/Digup/Digup/Packages/manifest.json
 >>>>>>> Début items (archi), Effects, début GameData
+=======
+    m_FilePath: G:/repo/Digup/Digup/Packages/manifest.json
+>>>>>>> CombatSystem
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< develop
       ticks: 637542600929582389
     m_Hash: 4129500968
@@ -20,10 +25,17 @@ m_ProjectFiles:
   m_LockFileStatus:
     m_FilePath: G:/repo/Digup/Digup/Packages/packages-lock.json
 >>>>>>> Début items (archi), Effects, début GameData
+=======
+      ticks: 637508119016907746
+    m_Hash: 1953513099
+  m_LockFileStatus:
+    m_FilePath: G:/repo/Digup/Digup/Packages/packages-lock.json
+>>>>>>> CombatSystem
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
       ticks: 637542603261780247
@@ -33,6 +45,9 @@ m_ProjectFiles:
 =======
       ticks: 637540287186826566
 >>>>>>> Game data terminé, à tester + Items et Characters avecinitialisation des Json
+=======
+      ticks: 637540287186826566
+>>>>>>> CombatSystem
     m_Hash: 1554650196
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -44,11 +59,15 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.3.9
       source: 1
+<<<<<<< HEAD
 <<<<<<< develop
       resolvedPath: D:\Unity Projects\Projet Assimilation\Digup\Digup\Library\PackageCache\com.unity.collab-proxy@1.3.9
 =======
       resolvedPath: G:\repo\Digup\Digup\Library\PackageCache\com.unity.collab-proxy@1.3.9
 >>>>>>> Début items (archi), Effects, début GameData
+=======
+      resolvedPath: G:\repo\Digup\Digup\Library\PackageCache\com.unity.collab-proxy@1.3.9
+>>>>>>> CombatSystem
       assetPath: Packages/com.unity.collab-proxy
       name: com.unity.collab-proxy
       displayName: Unity Collaborate
@@ -143,11 +162,15 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 2.0.7
       source: 1
+<<<<<<< HEAD
 <<<<<<< develop
       resolvedPath: D:\Unity Projects\Projet Assimilation\Digup\Digup\Library\PackageCache\com.unity.ide.rider@2.0.7
 =======
       resolvedPath: G:\repo\Digup\Digup\Library\PackageCache\com.unity.ide.rider@2.0.7
 >>>>>>> Début items (archi), Effects, début GameData
+=======
+      resolvedPath: G:\repo\Digup\Digup\Library\PackageCache\com.unity.ide.rider@2.0.7
+>>>>>>> CombatSystem
       assetPath: Packages/com.unity.ide.rider
       name: com.unity.ide.rider
       displayName: JetBrains Rider Editor
@@ -250,11 +273,15 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 2.0.5
       source: 1
+<<<<<<< HEAD
 <<<<<<< develop
       resolvedPath: D:\Unity Projects\Projet Assimilation\Digup\Digup\Library\PackageCache\com.unity.ide.visualstudio@2.0.5
 =======
       resolvedPath: G:\repo\Digup\Digup\Library\PackageCache\com.unity.ide.visualstudio@2.0.5
 >>>>>>> Début items (archi), Effects, début GameData
+=======
+      resolvedPath: G:\repo\Digup\Digup\Library\PackageCache\com.unity.ide.visualstudio@2.0.5
+>>>>>>> CombatSystem
       assetPath: Packages/com.unity.ide.visualstudio
       name: com.unity.ide.visualstudio
       displayName: Visual Studio Editor
@@ -325,11 +352,15 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.2.3
       source: 1
+<<<<<<< HEAD
 <<<<<<< develop
       resolvedPath: D:\Unity Projects\Projet Assimilation\Digup\Digup\Library\PackageCache\com.unity.ide.vscode@1.2.3
 =======
       resolvedPath: G:\repo\Digup\Digup\Library\PackageCache\com.unity.ide.vscode@1.2.3
 >>>>>>> Début items (archi), Effects, début GameData
+=======
+      resolvedPath: G:\repo\Digup\Digup\Library\PackageCache\com.unity.ide.vscode@1.2.3
+>>>>>>> CombatSystem
       assetPath: Packages/com.unity.ide.vscode
       name: com.unity.ide.vscode
       displayName: Visual Studio Code Editor
@@ -398,11 +429,15 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.1.19
       source: 1
+<<<<<<< HEAD
 <<<<<<< develop
       resolvedPath: D:\Unity Projects\Projet Assimilation\Digup\Digup\Library\PackageCache\com.unity.test-framework@1.1.19
 =======
       resolvedPath: G:\repo\Digup\Digup\Library\PackageCache\com.unity.test-framework@1.1.19
 >>>>>>> Début items (archi), Effects, début GameData
+=======
+      resolvedPath: G:\repo\Digup\Digup\Library\PackageCache\com.unity.test-framework@1.1.19
+>>>>>>> CombatSystem
       assetPath: Packages/com.unity.test-framework
       name: com.unity.test-framework
       displayName: Test Framework
@@ -493,11 +528,15 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 3.0.1
       source: 1
+<<<<<<< HEAD
 <<<<<<< develop
       resolvedPath: D:\Unity Projects\Projet Assimilation\Digup\Digup\Library\PackageCache\com.unity.textmeshpro@3.0.1
 =======
       resolvedPath: G:\repo\Digup\Digup\Library\PackageCache\com.unity.textmeshpro@3.0.1
 >>>>>>> Début items (archi), Effects, début GameData
+=======
+      resolvedPath: G:\repo\Digup\Digup\Library\PackageCache\com.unity.textmeshpro@3.0.1
+>>>>>>> CombatSystem
       assetPath: Packages/com.unity.textmeshpro
       name: com.unity.textmeshpro
       displayName: TextMeshPro
@@ -648,11 +687,15 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.4.4
       source: 1
+<<<<<<< HEAD
 <<<<<<< develop
       resolvedPath: D:\Unity Projects\Projet Assimilation\Digup\Digup\Library\PackageCache\com.unity.timeline@1.4.4
 =======
       resolvedPath: G:\repo\Digup\Digup\Library\PackageCache\com.unity.timeline@1.4.4
 >>>>>>> Début items (archi), Effects, début GameData
+=======
+      resolvedPath: G:\repo\Digup\Digup\Library\PackageCache\com.unity.timeline@1.4.4
+>>>>>>> CombatSystem
       assetPath: Packages/com.unity.timeline
       name: com.unity.timeline
       displayName: Timeline
@@ -2634,11 +2677,15 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 1.0.5
       source: 1
+<<<<<<< HEAD
 <<<<<<< develop
       resolvedPath: D:\Unity Projects\Projet Assimilation\Digup\Digup\Library\PackageCache\com.unity.ext.nunit@1.0.5
 =======
       resolvedPath: G:\repo\Digup\Digup\Library\PackageCache\com.unity.ext.nunit@1.0.5
 >>>>>>> Début items (archi), Effects, début GameData
+=======
+      resolvedPath: G:\repo\Digup\Digup\Library\PackageCache\com.unity.ext.nunit@1.0.5
+>>>>>>> CombatSystem
       assetPath: Packages/com.unity.ext.nunit
       name: com.unity.ext.nunit
       displayName: Custom NUnit
@@ -2696,9 +2743,13 @@ m_PackageAssets:
         path: 
   m_LocalPackages:
     m_LocalFileStatus: []
+<<<<<<< HEAD
 <<<<<<< develop
 m_ProjectPath: D:/Unity Projects/Projet Assimilation/Digup/Digup/Packages
 =======
 m_ProjectPath: G:/repo/Digup/Digup/Packages
 >>>>>>> Début items (archi), Effects, début GameData
+=======
+m_ProjectPath: G:/repo/Digup/Digup/Packages
+>>>>>>> CombatSystem
 m_EditorVersion: 2020.2.0f1 (3721df5a8b28)
