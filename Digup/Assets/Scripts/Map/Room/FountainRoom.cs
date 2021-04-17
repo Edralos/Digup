@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class FountainRoom : StageRoom
 {
+    public FountainRoom() : base()
+    {
+
+    }
     public FountainRoom(int Depth) : base(Depth)
     {
-        
+
     }
 }

@@ -3,17 +3,21 @@ using UnityEngine;
 
 public class Stage : MonoBehaviour
 {
-    private string Name;
-    private StartRoom StartRoom;
+    private string Name { get; set; }
+    private int MaxDepth { get; set; }
+    private StartRoom StartRoom { get; set; }
 
-    public Stage(string Name, int NbRooms)
+    public Stage(string Name, int MaxDepth)
     {
         this.Name = Name;
-        InitStage(NbRooms, 3);
+        this.MaxDepth = MaxDepth;
+        InitStage();
     }
 
-    public void InitStage(int MaxDepth, int Width)
+    public void InitStage()
     {
+        Debug.Log("Start Init");
+
         /*-----------------------------------------------*/
         /*         Randomly generate the stages          */
         /*-----------------------------------------------*/
@@ -24,32 +28,64 @@ public class Stage : MonoBehaviour
         /*-------------------------------*/
         /*   Fill the Pool with Rooms    */
         /*-------------------------------*/
-        int MaxRoomsInPool = (MaxDepth - 4) * Width;
-        //50% of Combat rooms
+        int MaxRoomsInPool = (MaxDepth - 4) * 3; // 3 is the max width
+        while(Pool.Count < MaxRoomsInPool)
+        {
+            int Rand = (int) new System.Random().Next(0,100);
+            Debug.Log("Random room number: "+ Rand);
+            
+            /**
+             * Les Rooms sont mises à 0 de Profondeur 
+             * et sont mises à jour dans les ajouts suivants
+             */
+            if(Rand < 50) { //50% of Combat rooms
+                Pool.Add(new CombatRoom(0));
+            } else if (Rand < 75) { //25% of Treasure or Trap rooms
+                switch(new System.Random().Next(0,1)) { // 1/2 est une treasure l'autre une Trap
+                    case 0:
+                        Pool.Add(new TreasureRoom());
+                        break;
+                    case 1:
+                        Pool.Add(new TrapRoom());
+                        break;
+                } 
+            } else { //25% of Other rooms
+                switch(new System.Random().Next(0, 2)) { // Randomly add one of each following Rooms
+                    case 0:
+                        Pool.Add(new MiniBossRoom());
+                        break;
+                    case 1:
+                        Pool.Add(new FountainRoom());
+                        break;
+                    case 2:
+                        Pool.Add(new ShopRoom());
+                        break;
+                }
+            }
 
-        //25% of Treasure or Trap rooms
+        }
 
-        //25% of Other rooms
-
-
-
+        /*-------------------------------*/
+        /*  Create the room progression  */
+        /*-------------------------------*/
         for (int Depth = 0; Depth< MaxDepth; Depth++)
         {
-            if(Depth == 0) {
+            if(Depth == 0) { //Démarrer avec 1 StartRoom et ensuite 2 CombatRoom
                 this.StartRoom = new StartRoom(Depth);
                 CurrentRooms.Add(this.StartRoom);
 
                 NextRooms.Add(new CombatRoom(Depth));
                 NextRooms.Add(new CombatRoom(Depth));
-            } else if(Depth == MaxDepth - 1)
-            {
+            } else if(Depth == MaxDepth - 1) { //Avant le boss 2 salles de repos
                 NextRooms.Add(new TreasureRoom(Depth));
                 NextRooms.Add(new ShopRoom(Depth));
-            } else if(Depth == MaxDepth) {
+            } else if(Depth == MaxDepth) { //Dernière salle est la salle de boss
                 NextRooms.Add(new BossRoom(Depth));
             } else {
                 //Pick 3 random Room from the Pool
 
+
+                //Change the Depth of these rooms
             }
 
             //For each current rooms
@@ -58,7 +94,7 @@ public class Stage : MonoBehaviour
                 List<StageRoom> NextRoomsCopy = new List<StageRoom>(NextRooms);
                 Debug.Log(NextRoomsCopy);
 
-                //Link the current Room to the next
+                //Link the current Room to the next (tirage sans remise)
                 for (int i = 0; i < NextRoomsCopy.Count && i<2; i++) {
                     //Pick a random Room 
                     StageRoom RandomNextRoom = NextRoomsCopy[new System.Random().Next(0,NextRoomsCopy.Count)];
@@ -74,12 +110,12 @@ public class Stage : MonoBehaviour
         }
     }
 
-    private string ToString()
+    new private string ToString()
     {
-        string StringRet = "";
+        string StringRet = this.Name;
 
-        StageRoom currentRoom = StartRoom;
-        while(currentRoom.getNextRooms.Count != 0)
+        StageRoom CurrentRoom = StartRoom;
+        while(CurrentRoom.NextRooms.Count != 0)
         {
             Debug.Log("yo");
         }
@@ -90,7 +126,7 @@ public class Stage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ToString();
+        //ToString();
     }
 
     // Update is called once per frame

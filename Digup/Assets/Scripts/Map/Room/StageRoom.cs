@@ -6,28 +6,37 @@ using System.Collections.Generic;
  */
 public class StageRoom
 {
-    protected string Name;
-    protected int Depth;
-    protected List<StageRoom> NextRooms;
+    protected string Name { get; set; }
+    protected int Depth { get; set; }
+    public List<StageRoom> NextRooms { get; protected set; }
 
-    public StageRoom(int depth)
+    /**
+     * Default constructor without params
+     */
+    public StageRoom()
     {
         this.Name = "Room";
-        this.Depth = depth;
+        this.Depth = 0;
         this.NextRooms = new List<StageRoom>();
     }
-
-    public string getName { get { return this.Name; } }
-    public int getDepth { get { return this.Depth; } }
-    public List<StageRoom> getNextRooms { get { return this.NextRooms; } }
-
+    
+    /**
+     * Default constructor without params
+     * @params Depth, the depth of the room withint the Stage
+     */
+    public StageRoom(int Depth)
+    {
+        this.Name = "Room";
+        this.Depth = Depth;
+        this.NextRooms = new List<StageRoom>();
+    }
 
     /**
      * Add a new room to the next rooms
      */
-    public void addNextRoom(StageRoom nextRoom)
+    public void addNextRoom(StageRoom NextRoom)
     {
-        this.NextRooms.Add(nextRoom);
+        this.NextRooms.Add(NextRoom);
     }
     private string toString()
     {

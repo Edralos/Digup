@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ShopRoom : StageRoom
 {
+    public ShopRoom() : base()
+    {
+
+    }
     public ShopRoom(int Depth) : base(Depth)
     {
 

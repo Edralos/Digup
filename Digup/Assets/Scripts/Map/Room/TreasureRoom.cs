@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class TreasureRoom : StageRoom
 {
+    public TreasureRoom() : base()
+    {
+
+    }
     public TreasureRoom(int Depth) : base(Depth)
     {
 
