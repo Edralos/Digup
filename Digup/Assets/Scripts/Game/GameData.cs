@@ -1,3 +1,4 @@
+using Assets.Characters;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -15,33 +16,33 @@ public static class GameData
     private const string TRINKETS_PATH = @"\Resources\JsonReferences\Trinkets.json";
     private const string EQUIPMENTS_PATH = @"\Resources\JsonReferences\Equiments.json";
     private const string CONSUMABLES_PATH = @"\Resources\JsonReferences\Consumables.json";
-    private static Dictionary<string, Character> Roaster;
-    private static Dictionary<string, Character> Ennemies;
+    private static Dictionary<string, Ally> Roaster;
+    private static Dictionary<string, Ennemy> Ennemies;
     private static Dictionary<string, TrinketItem> Trinkets;
     private static Dictionary<string, ActiveItem> ActiveEquipments;
     private static Dictionary<string, ConsumableItem> Consumables;
 
 
-    public static Character GetAlly(string name)
+    public static Ally GetAlly(string name)
     {
         if (Roaster == null)
         {
             throw new NullReferenceException("Allies have not been loaded");
         }
-        Character chara;
+        Ally chara;
         Roaster.TryGetValue(name, out chara);
-        return (Character)chara.Clone();
+        return (Ally)chara.Clone();
 
     }
-    public static Character GetEnnemy(string name)
+    public static Ennemy GetEnnemy(string name)
     {
         if (Ennemies == null)
         {
             throw new NullReferenceException("Ennemies have not been loaded");
         }
-        Character ennemy;
+        Ennemy ennemy;
         Ennemies.TryGetValue(name, out ennemy);
-        return (Character)ennemy.Clone();
+        return (Ennemy)ennemy.Clone();
     }
     public static ActiveItem GetEquipment(string name)
     {
@@ -115,13 +116,13 @@ public static class GameData
     private static void LoadEnnemies()
     {
         string json = File.ReadAllText(Application.dataPath + ENNEMIES_PATH);
-        Ennemies = JsonConvert.DeserializeObject<Dictionary<string, Character>>(json);
+        Ennemies = JsonConvert.DeserializeObject<Dictionary<string, Ennemy>>(json);
     }
 
     private static void LoadRoaster()
     {
         string json = File.ReadAllText(Application.dataPath + ROASTER_PATH);
-        Roaster = JsonConvert.DeserializeObject<Dictionary<string, Character>>(json);
+        Roaster = JsonConvert.DeserializeObject<Dictionary<string, Ally>>(json);
     }
     private static void LoadTrinkets()
     {
