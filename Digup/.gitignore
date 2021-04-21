@@ -22,6 +22,9 @@
 # Visual Studio cache directory
 .vs/
 
+/Library/ArtifactDB/*
+/Library/Artifacts/*
+
 # Gradle cache directory
 .gradle/
 
