@@ -1,0 +1,9 @@
+public enum EffectType { LIFE, CHARACTERSTAT, STATUS }
+
+public enum TargetType { SELF, ALLY, ENNEMY, ALL_ALLIES, ALL_FOES }
+
+public enum StatusType { NONE, BURN, BLEED, POISON, STUN, PARALIZE, PROVOKE, ALERT, DOPE, WITHDRAWAL, BAD_TRIP, }
+
+public enum CharacterStatType { NONE, MAX_HP, PROT, ATK, DODGE, SPEED }
+
+public enum EquipmentType { NULL, WEAPON, GLOVES, GREAVES, ARMOR, HELMET, RING, NECKLACE }

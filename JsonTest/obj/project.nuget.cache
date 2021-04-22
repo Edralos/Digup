@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "rOmU4h9zhANV4ohJBBgwGxBHe3qEFnUHCHo26pLCJ6FFQilGUL80z2najYLzcxrfm9KGXe7UQ0sjHbwmMCX2bA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Prysm#\\source\\repos\\JsonTest\\JsonTest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Prysm#\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
