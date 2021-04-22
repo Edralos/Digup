@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public static class RoomTypeDict 
+public class RoomTypeDict
 {
-    private static Dictionary<string, TrapRoomType> TrapRoomType;
-    private static Dictionary<string, FountainRoomType> FountainRoomType;
-    private static Dictionary<string, TreasureRoomType> TreasureRoomType;
-
+    public Dictionary<string, TrapRoomType> TrapRoomType { get; set; }
+    public Dictionary<string, FountainRoomType> FountainRoomType { get; set; }
+    public Dictionary<string, TreasureRoomType> TreasureRoomType { get; set; }
 }

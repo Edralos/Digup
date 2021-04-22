@@ -1,3 +1,3 @@
-﻿internal class FountainRoomType
+﻿public class FountainRoomType
 {
 }
