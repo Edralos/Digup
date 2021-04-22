@@ -5,11 +5,16 @@ using UnityEngine;
 
 
 public enum EquipmentType { NULL, WEAPON, GLOVES, GREAVES, ARMOR, HELMET, RING, NECKLACE}
+
+/// <summary>
+/// Items that can be equipped by Allies
+/// </summary>
 public abstract class EquipmentItem : Item
 {
     public EquipmentType EquipmentType;
     public Effect Effect;
-    public EquipmentItem(string name, string desc, string flavor, EquipmentType type, Effect effect) : base(name, desc, flavor)
+
+    public EquipmentItem(string name, string desc, string flavor, Effect effect, Rarity rarity, EquipmentType type = EquipmentType.NULL) : base(name, desc, flavor, rarity)
     {
         EquipmentType = type;
         Effect = effect;

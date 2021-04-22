@@ -1,6 +1,17 @@
+/// <summary>
+/// Equipment that gives Character stats effects (passive) to an Ally
+/// </summary>
 public class TrinketItem : EquipmentItem
 {
-    public TrinketItem(string name, string desc, string flavor, EquipmentType type, Effect effect) : base(name, desc, flavor, type, effect)
+    /// <summary>
+    /// TrinketItem constructor
+    /// </summary>
+    /// <param name="name">Trinket name</param>
+    /// <param name="desc">Description</param>
+    /// <param name="flavor">Flavor text</param>
+    /// <param name="type">Equipment type if wearable. Default : NULL</param>
+    /// <param name="effect"></param>
+    public TrinketItem(string name, string desc, string flavor, Effect effect, Rarity rarity, EquipmentType type = EquipmentType.NULL) : base(name, desc, flavor, effect, rarity, type)
     {
     }
 

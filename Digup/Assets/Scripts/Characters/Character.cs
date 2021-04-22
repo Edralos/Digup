@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Base class for Characters
+/// </summary>
 public class Character : ICloneable
 {
     public string Name;
@@ -28,7 +31,16 @@ public class Character : ICloneable
     public bool HasWithdrawal = false;
     public bool BadTrip = false;
 
-
+    /// <summary>
+    /// Character constructors
+    /// </summary>
+    /// <param name="name">Name of the character</param>
+    /// <param name="maxHP">Max HP</param>
+    /// <param name="prot">Protection</param>
+    /// <param name="dodge">Dodge</param>
+    /// <param name="atkMods">Attack modifiers</param>
+    /// <param name="acc">Accuracy</param>
+    /// <param name="speed">Speed</param>
     public Character(string name, int maxHP, int prot, int dodge, int atkMods, int acc, int speed)
     {
         Name = name;
