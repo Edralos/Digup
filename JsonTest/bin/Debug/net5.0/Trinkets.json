@@ -1,0 +1,20 @@
+{
+  "Trinketo": {
+    "EquipmentType": 0,
+    "Effect": {
+      "Target": 4,
+      "EffectTypes": [
+        1
+      ],
+      "StatusAmount": null,
+      "CharacterStatAmount": {
+        "DODGE": 9,
+        "MAX_HP": -3
+      },
+      "LifeAmounts": null
+    },
+    "Name": "Trinketo",
+    "Description": "???",
+    "FlavorText": "It fills you with power, but of what kind?"
+  }
+}
