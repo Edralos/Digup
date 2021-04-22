@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
+using ExitGames.Client.Photon;
 
-public class PlayerListing : MonoBehaviour, IPunObservable
+public class PlayerListing : MonoBehaviourPun
 {
     [SerializeField]
     private Text _text;
@@ -14,6 +13,9 @@ public class PlayerListing : MonoBehaviour, IPunObservable
 
     public Player Player { get; private set; }
     public int ID { get; set; }
+    public bool IsReady { get; set; }
+
+    private const byte SET_READY_EVENT = 14;
 
     public void SetPlayerInfo(Player Player, int ID)
     {
@@ -23,22 +25,38 @@ public class PlayerListing : MonoBehaviour, IPunObservable
         _readyIcon.transform.localScale = Vector3.zero;
     }
 
-    public bool IsReady { get; private set; }
-
-    public void SetReadyToBegin()
+    public void SetIsReady()
     {
-        _readyIcon.transform.localScale = new Vector3(1, 1, 1);
+        IsReady = true;
+        object[] SendedObjects = new object[] { Player, IsReady };
+        PhotonNetwork.RaiseEvent(SET_READY_EVENT, SendedObjects, RaiseEventOptions.Default, SendOptions.SendUnreliable);
     }
 
-    public void OnPhotonSerializeView(PhotonStream Stream, PhotonMessageInfo Message)
+    public GameObject ReadyIcon()
     {
-        if(Stream.IsWriting)
+        return _readyIcon;
+    }
+
+    private void OnEnable()
+    {
+        PhotonNetwork.NetworkingClient.EventReceived += NetworkingClient_EventReceived;
+    }
+
+    private void OnDisable()
+    {
+        PhotonNetwork.NetworkingClient.EventReceived -= NetworkingClient_EventReceived;
+    }
+
+    private void NetworkingClient_EventReceived(EventData obj)
+    {
+        if (obj.Code == SET_READY_EVENT)
         {
-            Stream.SendNext(_readyIcon.transform.localScale);
-        }
-        if (Stream.IsReading)
-        {
-            _readyIcon.transform.localScale = (Vector3) Stream.ReceiveNext();
+            object[] ReceivedObjects = (object[]) obj.CustomData;
+
+            if (Player == (Player) ReceivedObjects[0])
+            {
+                IsReady = (bool) ReceivedObjects[1];
+            }
         }
     }
 }
