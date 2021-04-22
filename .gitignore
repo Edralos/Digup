@@ -9,8 +9,11 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
+/[Ll]ibrary/Artifacts
 /[Ll]ibrary/ArtifactDB
 /[Ll]ibrary/SourceAssetDB
+/[Ll]ibrary/CurrentLayout-default.dwlt
+/[Ll]ibrary/SceneVisibilityState.asset
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 *.meta
