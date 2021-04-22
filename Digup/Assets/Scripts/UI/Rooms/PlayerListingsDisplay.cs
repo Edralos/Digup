@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
@@ -25,8 +24,7 @@ public class PlayerListingsDisplay : MonoBehaviourPunCallbacks
 
         if (Listing != null)
         {
-            Listing.SetPlayerInfo(PlayerInfo.Value);
-            Listing.GetComponent<RawImage>().texture = Resources.Load<Texture2D>("Textures/Sprites/GUI/Icons/Player"+PlayerInfo.Key);
+            Listing.SetPlayerInfo(PlayerInfo.Value, PlayerInfo.Key);
             _listings.Add(Listing);
         }
     }
@@ -38,6 +36,14 @@ public class PlayerListingsDisplay : MonoBehaviourPunCallbacks
         {
             Destroy(_listings[Index].gameObject);
             _listings.RemoveAt(Index);
+
+            foreach(PlayerListing Listing in _listings)
+            {
+                if (Listing.ID != 1 && Listing.ID != 2)
+                {
+                    Listing.ID -= 1;
+                }
+            }
         }
     }
 
@@ -49,9 +55,16 @@ public class PlayerListingsDisplay : MonoBehaviourPunCallbacks
 
             foreach (PlayerListing ShowedListing in _listings)
             {
-                if(ShowedListing.Player == PlayerInfo.Value)
+                ShowedListing.GetComponent<RawImage>().texture = Resources.Load<Texture2D>("Textures/Sprites/GUI/Icons/Player" + ShowedListing.ID);
+
+                if (ShowedListing.Player == PlayerInfo.Value)
                 {
                     AlreadyInList = true;
+
+                    if (ShowedListing.IsReady == true)
+                    {
+                        ShowedListing.ReadyIcon().transform.localScale = new Vector3(1, 1, 1);
+                    }
                     break;
                 }
                     
@@ -70,7 +83,7 @@ public class PlayerListingsDisplay : MonoBehaviourPunCallbacks
         {
             if(Listing.Player.NickName == PhotonNetwork.NickName)
             {
-                Listing.SetReadyToBegin();
+                Listing.SetIsReady();
             }
         }
     }
