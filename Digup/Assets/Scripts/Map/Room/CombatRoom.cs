@@ -8,6 +8,9 @@ using UnityEngine;
  */
 public class CombatRoom : StageRoom
 {
+    public Side AllySide { get; set; }
+    public Side EnemySide { get; set; }
+
     public CombatRoom(): this(0)
     {
 
