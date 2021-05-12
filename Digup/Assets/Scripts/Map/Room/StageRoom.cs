@@ -16,9 +16,9 @@ public class StageRoom
     /// </summary>
     public int Depth { get; set; }
     /// <summary>
-    /// Difficulty: The difficulty of the room, it will impact the nb of enemies or the damages the players can loose on a trap
+    /// Difficulty: The difficulty of the room, it's a multiplicator that will impact the nb of enemies or the damages the players can loose on a trap
     /// </summary>
-    protected string Difficulty { get; set; }
+    protected int Difficulty { get; set; }
     /// <summary>
     /// NextRooms: The rooms that will be available next when you're in this room
     /// </summary>

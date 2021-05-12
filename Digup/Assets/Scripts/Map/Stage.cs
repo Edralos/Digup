@@ -5,7 +5,7 @@ using UnityEngine;
 /// Represent the current stage
 /// Its composed of a starting room
 /// </summary>
-public class Stage : MonoBehaviour
+public class Stage
 {
     /// <summary>
     /// The name of the stage ex: "Tunnels", "Mountain", "Sky"
@@ -57,7 +57,7 @@ public class Stage : MonoBehaviour
             randInt = rand.Next(100);
             if (randInt < 50)
             { //50% of Combat rooms
-                pool.Add(new CombatRoom(0));
+                pool.Add(new CombatRoom());
             }
             else if (randInt < 75)
             { //25% of Treasure or Trap rooms
@@ -127,21 +127,12 @@ public class Stage : MonoBehaviour
                 nextRooms.Add(new BossRoom(depth));
             }
 
-            Debug.Log("******************************************************************************** depth:" + depth + " - Max depth:" + MaxDepth);
-
-            foreach(StageRoom room in nextRooms)
-            {
-                Debug.Log(room);
-            }
-            Debug.Log("-----------------------");
-
             //For each current rooms
             List <StageRoom> nextRoomsCopy;
             foreach (StageRoom currentRoom in currentRooms)
             {
                 //Create a Array copy of the NextRooms
                 nextRoomsCopy = new List<StageRoom>(nextRooms);
-                Debug.Log(nextRoomsCopy.Count);
                 //Link the current Room to the nexts (tirage sans remise)
                 for (int i=0; i < 2 && nextRoomsCopy.Count > 0; i++)
                 {
@@ -151,8 +142,6 @@ public class Stage : MonoBehaviour
                     currentRoom.addNextRoom(randomNextRoom);
                     //Delete it from the list
                     nextRoomsCopy.RemoveAt(nextRoomsCopy.IndexOf(randomNextRoom));
-
-                    Debug.Log("linking "+currentRoom+" to "+ randomNextRoom);
                 }
             }
 
@@ -161,32 +150,4 @@ public class Stage : MonoBehaviour
         }
 
     }
-
-    new private string ToString()
-    {
-        string StringRet = this.Name;
-
-        StageRoom CurrentRoom = StartRoom;
-        while(CurrentRoom.NextRooms.Count != 0)
-        {
-            Debug.Log("yo");
-        }
-
-        return StringRet;
-    }
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        Stage Stage = new Stage("Tunnels", 12);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 }

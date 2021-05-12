@@ -1,4 +1,3 @@
-using Assets.Characters;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -17,7 +16,7 @@ public static class GameData
     private const string EQUIPMENTS_PATH = @"\Resources\JsonReferences\Equiments.json";
     private const string CONSUMABLES_PATH = @"\Resources\JsonReferences\Consumables.json";
     private static Dictionary<string, Ally> Roaster;
-    private static Dictionary<string, Enemy> Ennemies;
+    private static Dictionary<string, Enemy> Enemies;
     private static Dictionary<string, TrinketItem> Trinkets;
     private static Dictionary<string, ActiveItem> ActiveEquipments;
     private static Dictionary<string, ConsumableItem> Consumables;
@@ -36,12 +35,12 @@ public static class GameData
     }
     public static Enemy GetEnemy(string name)
     {
-        if (Ennemies == null)
+        if (Enemies == null)
         {
             throw new NullReferenceException("Ennemies have not been loaded");
         }
         Enemy enemy;
-        Ennemies.TryGetValue(name, out enemy);
+        Enemies.TryGetValue(name, out enemy);
         return (Enemy)enemy.Clone();
     }
     public static ActiveItem GetEquipment(string name)
@@ -116,7 +115,7 @@ public static class GameData
     private static void LoadEnnemies()
     {
         string json = File.ReadAllText(Application.dataPath + ENNEMIES_PATH);
-        Ennemies = JsonConvert.DeserializeObject<Dictionary<string, Enemy>>(json);
+        Enemies = JsonConvert.DeserializeObject<Dictionary<string, Enemy>>(json);
     }
 
     private static void LoadRoaster()
