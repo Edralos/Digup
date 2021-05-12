@@ -22,7 +22,9 @@ public class Effect : ICloneable
 
     public Dictionary<StatusType, int> StatusAmount;
     public Dictionary<CharacterStatType, int> CharacterStatAmount;
-    public List<int> LifeAmounts;
+
+    // la liste int[] est de taille 2. Dans le cas où il y aurait 2 LifeAmount,  le 1er LifeAmount est un dégat et le 2e un Heal
+    public List<int[]> LifeAmounts;
 
     /// <summary>
     /// Constructor of Effect
@@ -32,7 +34,7 @@ public class Effect : ICloneable
     /// <param name="lifeamounts">If LIFE is among the effect types, gives the amounts healed/damaged</param>
     /// <param name="statusamount">If STATUS is among the effect types, gives the amounts of each concerned StatusType</param>
     /// <param name="statamount">If CHARACTERSTAT is among the effect types, gives the amounts of each concerned CharacterStatType</param>
-    public Effect(TargetType targetType, IEnumerable<EffectType> effects, IEnumerable<int> lifeamounts = null, Dictionary<StatusType, int> statusamount = null, Dictionary<CharacterStatType, int> statamount = null)
+    public Effect(TargetType targetType, IEnumerable<EffectType> effects, IEnumerable<int[]> lifeamounts = null, Dictionary<StatusType, int> statusamount = null, Dictionary<CharacterStatType, int> statamount = null)
     {
         Target = targetType;
         EffectTypes = effects.Distinct().ToList();
@@ -61,7 +63,7 @@ public class Effect : ICloneable
         else
         {
 
-            LifeAmounts = new List<int>(lifeamounts);
+            LifeAmounts = new List<int[]>(lifeamounts);
         }
 
         if (statamount == null)
