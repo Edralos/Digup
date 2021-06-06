@@ -7,6 +7,7 @@ using UnityEngine;
 /// </summary>
 public class Stage
 {
+
     /// <summary>
     /// The name of the stage ex: "Tunnels", "Mountain", "Sky"
     /// </summary>
@@ -95,8 +96,8 @@ public class Stage
         {
             if (depth == 0) //Démarrer avec 1 StartRoom et ensuite 2 CombatRoom
             {
-                this.StartRoom = new StartRoom(depth);
-                currentRooms.Add(this.StartRoom);
+                StartRoom = new StartRoom(depth);
+                currentRooms.Add(StartRoom);
 
                 nextRooms.Add(new CombatRoom(depth));
                 nextRooms.Add(new CombatRoom(depth));
@@ -147,7 +148,14 @@ public class Stage
 
             currentRooms = new List<StageRoom>(nextRooms);
             nextRooms = new List<StageRoom>();
+
         }
 
+
+    }
+
+    public override string ToString()
+    {
+        return Name;
     }
 }

@@ -13,13 +13,17 @@ public static class GameData
     private const string ROASTER_PATH = @"\Resources\JsonReferences\Roaster.json";
     private const string ENNEMIES_PATH = @"\Resources\JsonReferences\Enemies.json";
     private const string TRINKETS_PATH = @"\Resources\JsonReferences\Trinkets.json";
-    private const string EQUIPMENTS_PATH = @"\Resources\JsonReferences\Equiments.json";
+    private const string ACTIVE_EQUIPMENTS_PATH = @"\Resources\JsonReferences\ActiveEquipments.json";
+    private const string TRINKET_EQUIPMENTS_PATH = @"\Resources\JsonReferences\TrinketEquipments.json";
     private const string CONSUMABLES_PATH = @"\Resources\JsonReferences\Consumables.json";
     private static Dictionary<string, Ally> Roaster;
     private static Dictionary<string, Enemy> Enemies;
     private static Dictionary<string, TrinketItem> Trinkets;
     private static Dictionary<string, ActiveItem> ActiveEquipments;
+    private static Dictionary<string, TrinketItem> TrinketEquipments;
     private static Dictionary<string, ConsumableItem> Consumables;
+
+    private static string DataPath;
 
 
     public static Ally GetAlly(string name)
@@ -43,15 +47,25 @@ public static class GameData
         Enemies.TryGetValue(name, out enemy);
         return (Enemy)enemy.Clone();
     }
-    public static ActiveItem GetEquipment(string name)
+    public static ActiveItem GetActiveEquipment(string name)
     {
         if (ActiveEquipments == null)
         {
-            throw new NullReferenceException("Equipments have not been loaded");
+            throw new NullReferenceException("Active equipments have not been loaded");
         }
         ActiveItem equipment;
         ActiveEquipments.TryGetValue(name, out equipment);
         return (ActiveItem)equipment.Clone();
+    }
+    public static TrinketItem GetTrinketEquipment(string name)
+    {
+        if (TrinketEquipments == null)
+        {
+            throw new NullReferenceException("Trinket equipments have not been loaded");
+        }
+        TrinketItem equipment;
+        TrinketEquipments.TryGetValue(name, out equipment);
+        return (TrinketItem)equipment.Clone();
     }
     public static ConsumableItem GetConsumable(string name)
     {
@@ -84,48 +98,56 @@ public static class GameData
     /// <param name="foeFile"></param>
     /// <param name="equipmentFile"></param>
     /// <param name="consumableFiles"></param>
-    public static void LoadDataDictionaries()
+    public async static void LoadDataDictionaries()
     {
-        Task loadRoaster = new Task(() => LoadRoaster());
-        Task loadFoes = new Task(() => LoadEnnemies());
-        Task loadEquipment = new Task(() => LoadEquipments());
-        Task loadConsumable = new Task(() => LoadConsumables());
-        Task loadTrinkets = new Task(() => LoadTrinkets());
-        var res = Task.WhenAll(loadRoaster, loadFoes, loadEquipment, loadConsumable, loadTrinkets);
+        DataPath = Application.dataPath;
+
+        Task loadRoaster = Task.Run(() => LoadRoaster());
+        Task loadFoes = Task.Run(() => LoadEnnemies());
+        Task loadActiveEquipment = Task.Run(() => LoadActiveEquipments());
+        Task loadTrinketEquipment = Task.Run(() => LoadTrinketEquipments());
+        Task loadConsumable = Task.Run(() => LoadConsumables());
+        Task loadTrinkets = Task.Run(() => LoadTrinkets());
+        var res = Task.WhenAll(loadRoaster, loadFoes, loadActiveEquipment, loadTrinketEquipment, loadConsumable, loadTrinkets);
+        res.Wait();
         if (res.IsFaulted || res.IsCanceled)
         {
             throw res.Exception;
         }
-
-
     }
 
     private static void LoadConsumables()
     {
-        string json = File.ReadAllText(Application.dataPath + CONSUMABLES_PATH);
+        string json = File.ReadAllText(DataPath + CONSUMABLES_PATH);
         Consumables = JsonConvert.DeserializeObject<Dictionary<string, ConsumableItem>>(json);
     }
 
-    private static void LoadEquipments()
+    private static void LoadActiveEquipments()
     {
-        string json = File.ReadAllText(Application.dataPath + EQUIPMENTS_PATH);
+        string json = File.ReadAllText(DataPath + ACTIVE_EQUIPMENTS_PATH);
         ActiveEquipments = JsonConvert.DeserializeObject<Dictionary<string, ActiveItem>>(json);
+    }
+
+    private static void LoadTrinketEquipments()
+    {
+        string json = File.ReadAllText(DataPath + TRINKET_EQUIPMENTS_PATH);
+        TrinketEquipments = JsonConvert.DeserializeObject<Dictionary<string, TrinketItem>>(json);
     }
 
     private static void LoadEnnemies()
     {
-        string json = File.ReadAllText(Application.dataPath + ENNEMIES_PATH);
+        string json = File.ReadAllText(DataPath + ENNEMIES_PATH);
         Enemies = JsonConvert.DeserializeObject<Dictionary<string, Enemy>>(json);
     }
 
     private static void LoadRoaster()
     {
-        string json = File.ReadAllText(Application.dataPath + ROASTER_PATH);
+        string json = File.ReadAllText(DataPath + ROASTER_PATH);
         Roaster = JsonConvert.DeserializeObject<Dictionary<string, Ally>>(json);
     }
     private static void LoadTrinkets()
     {
-        string json = File.ReadAllText(Application.dataPath + TRINKETS_PATH);
+        string json = File.ReadAllText(DataPath + TRINKETS_PATH);
         Trinkets = JsonConvert.DeserializeObject<Dictionary<string, TrinketItem>>(json);
     }
 

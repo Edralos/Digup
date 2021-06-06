@@ -1,4 +1,5 @@
-using System;
+
+using UnityEngine;
 
 public class CombatRoom : StageRoom
 {
@@ -20,7 +21,7 @@ public class CombatRoom : StageRoom
         //Randomly set the number of enemies
         int nbAllies = 4; //TODO : utiliser la valeur stockée plutot qu'une valeur en brut
         System.Random rand = new System.Random();
-        int nbEnemies = (int)Math.Round(1 + rand.NextDouble() * Difficulty) + nbAllies;
+        int nbEnemies =  Difficulty + nbAllies;
 
         //Generate the enemies
         for (int i = 0; i < nbEnemies; i++)
@@ -35,7 +36,7 @@ public class CombatRoom : StageRoom
                 do {
                     int position = rand.Next(6);
                     isCellAvailable = EnemySide.FrontLane.AddCharacter(position, enemy);
-                } while (isCellAvailable);
+                } while (!isCellAvailable);
             }
             else
             {
@@ -46,9 +47,31 @@ public class CombatRoom : StageRoom
                 do {
                     int position = rand.Next(6);
                     isCellAvailable = EnemySide.BackLane.AddCharacter(position, enemy);
-                } while (isCellAvailable);
+                } while (!isCellAvailable);
             }
         }
+
+
+        Debug.Log(this);
     }
 
+    public override string ToString()
+    {
+
+        string sRet = "\n" + "--------------------------------" + "\n";
+        sRet += "Combat Room :\n";
+
+        foreach (Enemy enemy in EnemySide.FrontLane.Characters)
+        {
+            if (enemy != null)
+                sRet += enemy.Name + "\n";
+        }
+        foreach (Enemy enemy in EnemySide.BackLane.Characters)
+        {
+            if (enemy != null)
+                sRet += enemy.Name + "\n";
+        }
+
+        return sRet;
+    }
 }

@@ -13,7 +13,7 @@ public class Effect : ICloneable
     // NOTE : les effets < 0 sont des retraits. Ex : LIFE avec amount < 0 => dégats sinon heal, STATUS positif => inflige un statut sinon enlève le statut
     public TargetType Target;
     public List<EffectType> EffectTypes;
-    // on part du principe que les dictionnaires sont tremlis en accord avec les effect types possibles, la liste des Effect type permet 
+    // on part du principe que les dictionnaires sont remplis en accord avec les effect types possibles, la liste des Effect type permet 
     // seulement de vérifier qu'un dictionnaire est rempli
 
     public Dictionary<StatusType, int> StatusAmount;

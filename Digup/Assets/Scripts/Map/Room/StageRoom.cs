@@ -19,6 +19,7 @@ public class StageRoom
     /// Difficulty: The difficulty of the room, it's a multiplicator that will impact the nb of enemies or the damages the players can loose on a trap
     /// </summary>
     protected int Difficulty { get; set; }
+
     /// <summary>
     /// NextRooms: The rooms that will be available next when you're in this room
     /// </summary>
@@ -39,11 +40,12 @@ public class StageRoom
     /// It create a Room at a specified depth
     /// </summary>
     /// <param name="depth">The depth of the room within the Stage</param>
-    public StageRoom(int depth)
+    public StageRoom(int depth, int difficulty = 2)
     {
         Name = "Room";
         Depth = depth;
         NextRooms = new List<StageRoom>();
+        Difficulty = difficulty;
     }
 
     /// <summary>

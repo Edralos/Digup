@@ -24,7 +24,7 @@ public class Character : ICloneable
     public bool IsProvoking = false;
     public bool IsProtected = false;
     public bool IsAlert = false; // +75% esquive
-    public int Doped = 0; // d�gats sup inflig�s au prochain tour
+    public int Doped = 0; // dégats sup infligés au prochain tour
     public bool HasWithdrawal = false;
     public bool BadTrip = false;
 
