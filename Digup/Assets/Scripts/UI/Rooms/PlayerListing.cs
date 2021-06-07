@@ -13,9 +13,8 @@ public class PlayerListing : MonoBehaviourPun
 
     public Player Player { get; private set; }
     public int ID { get; set; }
-    public bool IsReady { get; set; }
 
-    private const byte SET_READY_EVENT = 14;
+    public bool IsReady { get; set; }
 
     public void SetPlayerInfo(Player Player, int ID)
     {
@@ -25,38 +24,13 @@ public class PlayerListing : MonoBehaviourPun
         _readyIcon.transform.localScale = Vector3.zero;
     }
 
-    public void SetIsReady()
+    public void SwitchIsReady()
     {
-        IsReady = true;
-        object[] SendedObjects = new object[] { Player, IsReady };
-        PhotonNetwork.RaiseEvent(SET_READY_EVENT, SendedObjects, RaiseEventOptions.Default, SendOptions.SendUnreliable);
+        IsReady = !IsReady;  
     }
 
     public GameObject ReadyIcon()
     {
         return _readyIcon;
-    }
-
-    private void OnEnable()
-    {
-        PhotonNetwork.NetworkingClient.EventReceived += NetworkingClient_EventReceived;
-    }
-
-    private void OnDisable()
-    {
-        PhotonNetwork.NetworkingClient.EventReceived -= NetworkingClient_EventReceived;
-    }
-
-    private void NetworkingClient_EventReceived(EventData obj)
-    {
-        if (obj.Code == SET_READY_EVENT)
-        {
-            object[] ReceivedObjects = (object[]) obj.CustomData;
-
-            if (Player == (Player) ReceivedObjects[0])
-            {
-                IsReady = (bool) ReceivedObjects[1];
-            }
-        }
     }
 }

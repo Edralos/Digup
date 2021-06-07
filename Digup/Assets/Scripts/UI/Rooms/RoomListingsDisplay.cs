@@ -13,26 +13,42 @@ public class RoomListingsDisplay : MonoBehaviourPunCallbacks
 
     private List<RoomListing> _listings = new List<RoomListing>();
 
+    public override void OnJoinedRoom()
+    {
+        _content.DestroyChildren();
+        _listings.Clear();
+    }
+
     public override void OnRoomListUpdate(List<RoomInfo> RoomList)
     {
+        Debug.Log("OnRoomListUpdate");
+
         foreach(RoomInfo Info in RoomList)
         {
             if(Info.RemovedFromList)
             {
-                int Index = _listings.FindIndex(x => x.RoomInfo.Name == Info.Name);
-                if(Index != -1)
+                RoomListing ListingToDelete = _listings.Find(x => x.RoomInfo.Name == Info.Name);
+                if(ListingToDelete != null)
                 {
-                    Destroy(_listings[Index].gameObject);
-                    _listings.RemoveAt(Index);
+                    Destroy(ListingToDelete.gameObject);
+                    _listings.Remove(ListingToDelete);
                 }  
             }
             else
             {
-                RoomListing Listing = Instantiate(_roomListing, _content);
-                if (Listing != null)
+                int Index = _listings.FindIndex(x => x.RoomInfo.Name == Info.Name);
+                if(Index == -1)
                 {
-                    Listing.SetRoomInfo(Info);
-                    _listings.Add(Listing);
+                    RoomListing NewListing = Instantiate(_roomListing, _content);
+                    if (NewListing != null)
+                    {
+                        NewListing.SetRoomInfo(Info);
+                        _listings.Add(NewListing);
+                    }
+                }
+                else
+                {
+
                 }
             }
         }
