@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
+using ExitGames.Client.Photon;
 
-public class PlayerListing : MonoBehaviour, IPunObservable
+public class PlayerListing : MonoBehaviourPun
 {
     [SerializeField]
     private Text _text;
@@ -13,30 +12,25 @@ public class PlayerListing : MonoBehaviour, IPunObservable
     private GameObject _readyIcon;
 
     public Player Player { get; private set; }
+    public int ID { get; set; }
 
-    public void SetPlayerInfo(Player Player)
+    public bool IsReady { get; set; }
+
+    public void SetPlayerInfo(Player Player, int ID)
     {
         this.Player = Player;
+        this.ID = ID;
         _text.text = Player.NickName;
         _readyIcon.transform.localScale = Vector3.zero;
     }
 
-    public bool IsReady { get; private set; }
-
-    public void SetReadyToBegin()
+    public void SwitchIsReady()
     {
-        _readyIcon.transform.localScale = new Vector3(1, 1, 1);
+        IsReady = !IsReady;  
     }
 
-    public void OnPhotonSerializeView(PhotonStream Stream, PhotonMessageInfo Message)
+    public GameObject ReadyIcon()
     {
-        if(Stream.IsWriting)
-        {
-            Stream.SendNext(_readyIcon.transform.localScale);
-        }
-        if (Stream.IsReading)
-        {
-            _readyIcon.transform.localScale = (Vector3) Stream.ReceiveNext();
-        }
+        return _readyIcon;
     }
 }

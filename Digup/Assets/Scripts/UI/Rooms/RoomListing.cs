@@ -35,11 +35,11 @@ public class RoomListing : MonoBehaviour
 
             RoomName.text = "You want to join\n" + _text.text + " : ";
 
-            RoomSelectionMenu.GetComponent<RoomManager>().SetSelectedRoom(RoomInfo);
+            RoomSelectionMenu.GetComponent<RoomMaker>().SetSelectedRoom(RoomInfo);
         }
         else
         {
-            RoomSelectionMenu.GetComponent<RoomManager>().JoinRoom(RoomInfo.Name);
+            RoomSelectionMenu.GetComponent<RoomMaker>().JoinRoom(RoomInfo.Name);
         }
     }
 

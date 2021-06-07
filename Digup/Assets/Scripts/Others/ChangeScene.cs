@@ -1,12 +1,20 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    public void GoToScene(string SceneName)
+    public static void GoToScene(string SceneName)
     {
-        SceneManager.LoadScene(SceneName);
+        if (PhotonNetwork.InRoom)
+        {
+            PhotonNetwork.LoadLevel(SceneName);
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneName);
+        }
     }
 }
