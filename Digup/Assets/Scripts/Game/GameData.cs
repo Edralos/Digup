@@ -122,7 +122,7 @@ public static class GameData
         Task loadActiveEquipment = Task.Run(() => LoadActiveEquipments());
         Task loadConsumable = Task.Run(() => LoadConsumables());
         Task loadTrinkets = Task.Run(() => LoadTrinkets());
-        var res = Task.WhenAll(loadRoaster, loadFoes, loadActiveEquipment/*, loadConsumable*//*, loadTrinkets*/);
+        var res = Task.WhenAll(loadRoaster, loadFoes, loadActiveEquipment, loadConsumable , loadTrinkets);
         try
         { 
             res.Wait();
