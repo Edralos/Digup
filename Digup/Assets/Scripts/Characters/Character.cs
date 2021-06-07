@@ -14,12 +14,13 @@ public class Character : ICloneable
     public int Prot;
     public int Dodge;
     public int AttakModifiers;
+    public GameObject Prefab { get; set; }
 
-    // pr�cision aussi par attaque
+    // précision aussi par attaque
     public int Accuracy;
     public int Speed;
 
-    public int Poison = 0; // nb tours -  5-8% /tour, cumul augmente le nb de d�gats
+    public int Poison = 0; // nb tours -  5-8% /tour, cumul augmente le nb de dégats
     public bool IsStunned = false;
     public int Burn = 0; // nb tours - 3% des HP/tour, cumul augmente le nb tours
     public int[] Bleed = new int[] { 0, 0 };

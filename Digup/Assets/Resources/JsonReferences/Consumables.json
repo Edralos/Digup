@@ -16,8 +16,14 @@
         "MAX_HP": -3
       },
       "LifeAmounts": [
-        7,
-        -7
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          7
+        ]
       ]
     },
     "Name": "Thingy",
@@ -33,7 +39,10 @@
       "StatusAmount": null,
       "CharacterStatAmount": null,
       "LifeAmounts": [
-        5
+        [
+          5,
+          5
+        ]
       ]
     },
     "Name": "Potion",

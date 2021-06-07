@@ -16,7 +16,7 @@ public class TitleScreen : MonoBehaviour
             MenuButton.SetActive(false);
         }
 
-        this.transform.localPosition = new Vector3(17,-484, 0);
+        this.transform.localPosition = new Vector3(17, -200, 0);
     }
 
     // Update is called once per frame
@@ -35,6 +35,11 @@ public class TitleScreen : MonoBehaviour
                     MenuButton.SetActive(true);
                 }
             }
+        }
+
+        if(this.transform.localScale.y > 1)
+        {
+            this.transform.localScale = new Vector3(1,1,0);
         }
     }
 }

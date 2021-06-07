@@ -230,7 +230,7 @@ RectTransform:
   m_GameObject: {fileID: 288188257}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 0}
   m_Children: []
   m_Father: {fileID: 488407126}
   m_RootOrder: 4
@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 488407131}
   - component: {fileID: 488407130}
   - component: {fileID: 488407132}
+  - component: {fileID: 488407133}
   m_Layer: 0
   m_Name: Scene
   m_TagString: Untagged
@@ -441,6 +442,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 055c84af37db6ad478f42f115f72f619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &488407133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488407125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea0963cb6b13369448931c2f41e0c327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CaptainPrefab: {fileID: 8696011890037437444, guid: d280edc6a970cd94d89f992ced02d9b0, type: 3}
 --- !u!1 &494648677
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,6 +671,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &761849600
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 761849601}
+  - component: {fileID: 761849602}
+  m_Layer: 0
+  m_Name: ChangeSceneHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &761849601
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761849600}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.918152, y: 30.289082, z: 0.0078125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1566387986}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &761849602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761849600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 055c84af37db6ad478f42f115f72f619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &891263536
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,6 +945,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1198386502}
+  - {fileID: 761849601}
   m_Father: {fileID: 488407126}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -940,8 +998,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 488407132}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 761849602}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: GoToScene
         m_Mode: 5
         m_Arguments:
@@ -949,7 +1007,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: SoloMenuScreen
+          m_StringArgument: StartRoomScene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1566387988

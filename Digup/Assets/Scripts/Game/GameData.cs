@@ -14,7 +14,6 @@ public static class GameData
     private const string ENNEMIES_PATH = @"\Resources\JsonReferences\Enemies.json";
     private const string TRINKETS_PATH = @"\Resources\JsonReferences\Trinkets.json";
     private const string ACTIVE_EQUIPMENTS_PATH = @"\Resources\JsonReferences\ActiveEquipments.json";
-    private const string TRINKET_EQUIPMENTS_PATH = @"\Resources\JsonReferences\TrinketEquipments.json";
     private const string CONSUMABLES_PATH = @"\Resources\JsonReferences\Consumables.json";
     private static Dictionary<string, Ally> Roaster;
     private static Dictionary<string, Enemy> Enemies;
@@ -123,8 +122,12 @@ public static class GameData
         Task loadActiveEquipment = Task.Run(() => LoadActiveEquipments());
         Task loadConsumable = Task.Run(() => LoadConsumables());
         Task loadTrinkets = Task.Run(() => LoadTrinkets());
-        var res = Task.WhenAll(loadRoaster, loadFoes, loadActiveEquipment, loadConsumable, loadTrinkets);
-        res.Wait();
+        var res = Task.WhenAll(loadRoaster, loadFoes, loadActiveEquipment/*, loadConsumable*//*, loadTrinkets*/);
+        try
+        { 
+            res.Wait();
+        }
+        catch (Exception) { }
         if (res.IsFaulted || res.IsCanceled)
         {
             throw res.Exception;

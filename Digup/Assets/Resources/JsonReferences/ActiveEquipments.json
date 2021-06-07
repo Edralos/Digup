@@ -9,7 +9,10 @@
       "StatusAmount": null,
       "CharacterStatAmount": null,
       "LifeAmounts": [
-        7
+        [
+          1,
+          7
+        ]
       ]
     },
     "Name": "Flower",
@@ -34,8 +37,14 @@
         "MAX_HP": -3
       },
       "LifeAmounts": [
-        7,
-        -7
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          7
+        ]
       ]
     },
     "Name": "Thingy",

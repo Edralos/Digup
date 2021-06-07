@@ -34,60 +34,60 @@ public class Effect : ICloneable
     /// <param name="lifeamounts">If LIFE is among the effect types, gives the amounts healed/damaged</param>
     /// <param name="statusamount">If STATUS is among the effect types, gives the amounts of each concerned StatusType</param>
     /// <param name="statamount">If CHARACTERSTAT is among the effect types, gives the amounts of each concerned CharacterStatType</param>
-    public Effect(TargetType targetType, IEnumerable<EffectType> effects, IEnumerable<int[]> lifeamounts = null, Dictionary<StatusType, int> statusamount = null, Dictionary<CharacterStatType, int> statamount = null)
-    {
-        Target = targetType;
-        EffectTypes = effects.Distinct().ToList();
-        //check correlation entre types d'effets
-        foreach (EffectType effectType in EffectTypes)
-        {
-            if (effectType == EffectType.CHARACTERSTAT && (statamount?.Count < 1 || statamount == null))
-            {
-                throw new ArgumentException("Stat effect has been declared but has no associated amounts");
-            }
-            else if (effectType == EffectType.STATUS && (statusamount?.Count < 1 || statusamount == null))
-            {
+    //public Effect(TargetType targetType, IEnumerable<EffectType> effects, IEnumerable<int[]> lifeamounts = null, Dictionary<StatusType, int> statusamount = null, Dictionary<CharacterStatType, int> statamount = null)
+    //{
+    //    Target = targetType;
+    //    EffectTypes = effects.Distinct().ToList();
+    //    //check correlation entre types d'effets
+    //    foreach (EffectType effectType in EffectTypes)
+    //    {
+    //        if (effectType == EffectType.CHARACTERSTAT && (statamount?.Count < 1 || statamount == null))
+    //        {
+    //            throw new ArgumentException("Stat effect has been declared but has no associated amounts");
+    //        }
+    //        else if (effectType == EffectType.STATUS && (statusamount?.Count < 1 || statusamount == null))
+    //        {
 
-                throw new ArgumentException("Status effect has been declared but has no associated amounts");
-            }
-            else if (effectType == EffectType.LIFE && (lifeamounts?.Count() < 1 || lifeamounts == null))
-            {
+    //            throw new ArgumentException("Status effect has been declared but has no associated amounts");
+    //        }
+    //        else if (effectType == EffectType.LIFE && (lifeamounts?.Count() < 1 || lifeamounts == null))
+    //        {
 
-                throw new ArgumentException("Life effect has been declared but has no associated amounts");
-            }
-        }
-        if (lifeamounts == null)
-        {
-            LifeAmounts = null;
-        }
-        else
-        {
+    //            throw new ArgumentException("Life effect has been declared but has no associated amounts");
+    //        }
+    //    }
+    //    if (lifeamounts == null)
+    //    {
+    //        LifeAmounts = null;
+    //    }
+    //    else
+    //    {
 
-            LifeAmounts = new List<int[]>(lifeamounts);
-        }
+    //        LifeAmounts = new List<int[]>(lifeamounts);
+    //    }
 
-        if (statamount == null)
-        {
+    //    if (statamount == null)
+    //    {
 
-            CharacterStatAmount = null;
-        }
-        else
-        {
+    //        CharacterStatAmount = null;
+    //    }
+    //    else
+    //    {
 
-            CharacterStatAmount = statamount;
-        }
+    //        CharacterStatAmount = statamount;
+    //    }
 
-        if (statusamount == null)
-        {
+    //    if (statusamount == null)
+    //    {
 
-            StatusAmount = null;
-        }
-        else
-        {
+    //        StatusAmount = null;
+    //    }
+    //    else
+    //    {
 
-            StatusAmount = statusamount;
-        }
-    }
+    //        StatusAmount = statusamount;
+    //    }
+    //}
 
     public object Clone()
     {
