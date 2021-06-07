@@ -10,7 +10,7 @@ public class DataLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     { 
-        GameData.LoadDataDictionaries();
+         GameData.LoadDataDictionaries();
         Captain = GameData.GetAlly("Captain");
         Captain.Prefab = CaptainPrefab;
 
