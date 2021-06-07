@@ -22,6 +22,10 @@ public static class GameData
     private static Dictionary<string, ActiveItem> ActiveEquipments;
     private static Dictionary<string, ConsumableItem> Consumables;
 
+    public static Dictionary<string, GameObject> AlliesPrefabs = new Dictionary<string, GameObject>();
+    public static Dictionary<string, GameObject> EnemiesPrefabs = new Dictionary<string, GameObject>();
+    public static Dictionary<string, GameObject> ItemsPrefabs = new Dictionary<string, GameObject>();
+
     /// <summary>
     /// Get a referenced Ally
     /// </summary>

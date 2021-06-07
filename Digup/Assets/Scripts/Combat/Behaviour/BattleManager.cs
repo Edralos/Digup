@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public enum BattleState { START, ALLY_TURN, ENNEMY_TURN, LOOT, END }
+/// <summary>
+/// Etats du combat
+/// </summary>
+public enum BattleState { START, ACTION_PICK, WON, LOST }
 public class BattleManager : MonoBehaviour
 {
     public const float CRITICALMOD = 1.5f;
@@ -18,9 +21,11 @@ public class BattleManager : MonoBehaviour
     {
 
         State = BattleState.START;
+        Ally player = GameData.GetAlly("captain");
+
         foreach (var chara in Allies)
         {
-            Characters.Add(chara.GetComponent<Character>());
+            
         }
         foreach (var chara in Ennemies)
         {
@@ -77,6 +82,8 @@ public class BattleManager : MonoBehaviour
             return Mathf.RoundToInt(Random.Range(effect.LifeAmounts[0][0], effect.LifeAmounts[0][1]));
         }
     }
+
+
 
     bool IsTargetValid(Character target, Effect effect)
     {

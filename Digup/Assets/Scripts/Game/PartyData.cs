@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public static class PartyData
 {
-    public static Dictionary<int, Ally> Allies { get; private set; }
+    public static Dictionary<int, Ally> Allies { get; private set; } = new Dictionary<int, Ally>();
 
     public static Ally RemoveAlly(int id)
     {
