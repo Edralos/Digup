@@ -1,13 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-guid: 783b7a2c6fa97574da9691924bfec4f4
-=======
-guid: 8925a2e64f4a68b4aa07956f0fe2b51c
->>>>>>> CombatSystem
-=======
-guid: abd53684aaced1b4db3145d0da93c42f
->>>>>>> map-generation
+guid: e712b44403e089a4cbf06956003a608c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

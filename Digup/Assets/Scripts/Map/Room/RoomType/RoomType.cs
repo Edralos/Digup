@@ -1,4 +1,7 @@
+using System;
+
 public class RoomType
 {
-    private string Name;
+    private string Name { get; set; }
+
 }

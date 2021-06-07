@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: d2c325dae754a5e41ad46c8419e07c46
+=======
+guid: 39ace05d0a1e1354eae10253d7ec1ca1
+>>>>>>> map-generation
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

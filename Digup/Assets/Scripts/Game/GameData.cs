@@ -1,4 +1,3 @@
-using Assets.Characters;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -12,14 +11,16 @@ using UnityEngine;
 public static class GameData
 {
     private const string ROASTER_PATH = @"\Resources\JsonReferences\Roaster.json";
-    private const string ENNEMIES_PATH = @"\Resources\JsonReferences\Ennemies.json";
+    private const string ENNEMIES_PATH = @"\Resources\JsonReferences\Enemies.json";
     private const string TRINKETS_PATH = @"\Resources\JsonReferences\Trinkets.json";
-    private const string EQUIPMENTS_PATH = @"\Resources\JsonReferences\Equiments.json";
+    private const string ACTIVE_EQUIPMENTS_PATH = @"\Resources\JsonReferences\ActiveEquipments.json";
+    private const string TRINKET_EQUIPMENTS_PATH = @"\Resources\JsonReferences\TrinketEquipments.json";
     private const string CONSUMABLES_PATH = @"\Resources\JsonReferences\Consumables.json";
     private static Dictionary<string, Ally> Roaster;
-    private static Dictionary<string, Ennemy> Ennemies;
+    private static Dictionary<string, Enemy> Enemies;
     private static Dictionary<string, TrinketItem> Trinkets;
     private static Dictionary<string, ActiveItem> ActiveEquipments;
+    private static Dictionary<string, TrinketItem> TrinketEquipments;
     private static Dictionary<string, ConsumableItem> Consumables;
 
     public static Dictionary<string, GameObject> AlliesPrefabs = new Dictionary<string, GameObject>();
@@ -50,13 +51,13 @@ public static class GameData
     /// <returns>Copy of referenced Ennemy if present, else returns null</returns>
     public static Ennemy GetEnnemy(string name)
     {
-        if (Ennemies == null)
+        if (Enemies == null)
         {
             throw new NullReferenceException("Ennemies have not been loaded");
         }
-        Ennemy ennemy;
-        Ennemies.TryGetValue(name, out ennemy);
-        return (Ennemy)ennemy.Clone();
+        Enemy enemy;
+        Enemies.TryGetValue(name, out enemy);
+        return (Enemy)enemy.Clone();
     }
 
     /// <summary>
@@ -68,7 +69,7 @@ public static class GameData
     {
         if (ActiveEquipments == null)
         {
-            throw new NullReferenceException("Equipments have not been loaded");
+            throw new NullReferenceException("Active equipments have not been loaded");
         }
         ActiveItem equipment;
         ActiveEquipments.TryGetValue(name, out equipment);
@@ -114,18 +115,20 @@ public static class GameData
     /// </summary>
     public static void LoadDataDictionaries()
     {
-        Task loadRoaster = new Task(() => LoadRoaster());
-        Task loadFoes = new Task(() => LoadEnnemies());
-        Task loadEquipment = new Task(() => LoadEquipments());
-        Task loadConsumable = new Task(() => LoadConsumables());
-        Task loadTrinkets = new Task(() => LoadTrinkets());
-        var res = Task.WhenAll(loadRoaster, loadFoes, loadEquipment, loadConsumable, loadTrinkets);
+        DataPath = Application.dataPath;
+
+        Task loadRoaster = Task.Run(() => LoadRoaster());
+        Task loadFoes = Task.Run(() => LoadEnnemies());
+        Task loadActiveEquipment = Task.Run(() => LoadActiveEquipments());
+        Task loadTrinketEquipment = Task.Run(() => LoadTrinketEquipments());
+        Task loadConsumable = Task.Run(() => LoadConsumables());
+        Task loadTrinkets = Task.Run(() => LoadTrinkets());
+        var res = Task.WhenAll(loadRoaster, loadFoes, loadActiveEquipment, loadTrinketEquipment, loadConsumable, loadTrinkets);
+        res.Wait();
         if (res.IsFaulted || res.IsCanceled)
         {
             throw res.Exception;
         }
-
-
     }
 
     /// <summary>
@@ -133,7 +136,7 @@ public static class GameData
     /// </summary>
     private static void LoadConsumables()
     {
-        string json = File.ReadAllText(Application.dataPath + CONSUMABLES_PATH);
+        string json = File.ReadAllText(DataPath + CONSUMABLES_PATH);
         Consumables = JsonConvert.DeserializeObject<Dictionary<string, ConsumableItem>>(json);
     }
 
@@ -143,7 +146,7 @@ public static class GameData
     /// </summary>
     private static void LoadEquipments()
     {
-        string json = File.ReadAllText(Application.dataPath + EQUIPMENTS_PATH);
+        string json = File.ReadAllText(DataPath + ACTIVE_EQUIPMENTS_PATH);
         ActiveEquipments = JsonConvert.DeserializeObject<Dictionary<string, ActiveItem>>(json);
     }
 
@@ -152,8 +155,8 @@ public static class GameData
     /// </summary>
     private static void LoadEnnemies()
     {
-        string json = File.ReadAllText(Application.dataPath + ENNEMIES_PATH);
-        Ennemies = JsonConvert.DeserializeObject<Dictionary<string, Ennemy>>(json);
+        string json = File.ReadAllText(DataPath + ENNEMIES_PATH);
+        Enemies = JsonConvert.DeserializeObject<Dictionary<string, Enemy>>(json);
     }
 
     /// <summary>
@@ -161,7 +164,7 @@ public static class GameData
     /// </summary>
     private static void LoadRoaster()
     {
-        string json = File.ReadAllText(Application.dataPath + ROASTER_PATH);
+        string json = File.ReadAllText(DataPath + ROASTER_PATH);
         Roaster = JsonConvert.DeserializeObject<Dictionary<string, Ally>>(json);
     }
 
@@ -170,7 +173,7 @@ public static class GameData
     /// </summary>
     private static void LoadTrinkets()
     {
-        string json = File.ReadAllText(Application.dataPath + TRINKETS_PATH);
+        string json = File.ReadAllText(DataPath + TRINKETS_PATH);
         Trinkets = JsonConvert.DeserializeObject<Dictionary<string, TrinketItem>>(json);
     }
 

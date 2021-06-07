@@ -1,4 +1,4 @@
-﻿internal class TrapRoomType
+﻿public class TrapRoomType
 {
-
+    protected int MinDamageAmount;
 }
