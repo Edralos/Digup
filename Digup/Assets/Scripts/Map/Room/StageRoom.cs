@@ -40,7 +40,7 @@ public class StageRoom
     /// It create a Room at a specified depth
     /// </summary>
     /// <param name="depth">The depth of the room within the Stage</param>
-    public StageRoom(int depth, int difficulty = 2)
+    public StageRoom(int depth, int difficulty = 1)
     {
         Name = "Room";
         Depth = depth;

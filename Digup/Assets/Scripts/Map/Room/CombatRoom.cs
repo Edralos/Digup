@@ -19,7 +19,7 @@ public class CombatRoom : StageRoom
         EnemySide = new Side();
 
         //Randomly set the number of enemies
-        int nbAllies = 4; //TODO : utiliser la valeur stock�e plutot qu'une valeur en brut
+        int nbAllies = 1; //TODO : utiliser la valeur stock�e plutot qu'une valeur en brut
         System.Random rand = new System.Random();
         int nbEnemies =  Difficulty + nbAllies;
 

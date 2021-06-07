@@ -1,44 +1,45 @@
 using System.Collections.Generic;
-using UnityEngine;
 
 /// <summary>
 /// Represent the current stage
 /// Its composed of a starting room
 /// </summary>
-public class Stage
+public static class Stage
 {
 
     /// <summary>
     /// The name of the stage ex: "Tunnels", "Mountain", "Sky"
     /// </summary>
-    private string Name { get; set; }
+    private static string Name { get; set; }
     /// <summary>
     /// The max depth where the rooms can go
     /// </summary>
-    private int MaxDepth { get; set; }
+    private static int MaxDepth { get; set; }
     /// <summary>
     /// The starting room of the stage
     /// </summary>
-    private StartRoom StartRoom { get; set; }
+    private static StageRoom CurrentRoom { get; set; }
 
     /// <summary>
     /// This constructor create a Stage with a name and a max depth
     /// </summary>
     /// <param name="name">Name of the stage</param>
     /// <param name="maxDepth">Max depth of the stage</param>
-    public Stage(string name, int maxDepth)
-    {
-        Name = name;
-        MaxDepth = maxDepth;
-        InitStage();
-    }
+    //public Stage(string name, int maxDepth)
+    //{
+    //    Name = name;
+    //    MaxDepth = maxDepth;
+    //    InitStage();
+    //}
 
     /// <summary>
     /// Initialise the stage by creating a pool of rooms
     /// Then link all rooms one to another
     /// </summary>
-    public void InitStage()
+    public static void InitStage(string name, int maxDepth)
     {
+        Name = name;
+        MaxDepth = maxDepth;
         int width = 3;
 
         List<StageRoom> currentRooms = new List<StageRoom>();
@@ -96,12 +97,13 @@ public class Stage
         {
             if (depth == 0) //Démarrer avec 1 StartRoom et ensuite 2 CombatRoom
             {
-                StartRoom = new StartRoom(depth);
-                currentRooms.Add(StartRoom);
+                CurrentRoom = new StartRoom(depth);
+                currentRooms.Add(CurrentRoom);
 
                 nextRooms.Add(new CombatRoom(depth));
                 nextRooms.Add(new CombatRoom(depth));
-            } else if (depth > 0 && depth < MaxDepth - 3) //Apres les 1er salles et avant les salles de fin
+            }
+            else if (depth > 0 && depth < MaxDepth - 3) //Apres les 1er salles et avant les salles de fin
             {
                 //Pick 3 random Room from the Pool
                 StageRoom randomNextRoom;
@@ -129,13 +131,13 @@ public class Stage
             }
 
             //For each current rooms
-            List <StageRoom> nextRoomsCopy;
+            List<StageRoom> nextRoomsCopy;
             foreach (StageRoom currentRoom in currentRooms)
             {
                 //Create a Array copy of the NextRooms
                 nextRoomsCopy = new List<StageRoom>(nextRooms);
                 //Link the current Room to the nexts (tirage sans remise)
-                for (int i=0; i < 2 && nextRoomsCopy.Count > 0; i++)
+                for (int i = 0; i < 2 && nextRoomsCopy.Count > 0; i++)
                 {
                     //Pick a random Room
                     StageRoom randomNextRoom = nextRoomsCopy[rand.Next(0, nextRoomsCopy.Count)];
@@ -148,14 +150,6 @@ public class Stage
 
             currentRooms = new List<StageRoom>(nextRooms);
             nextRooms = new List<StageRoom>();
-
         }
-
-
-    }
-
-    public override string ToString()
-    {
-        return Name;
     }
 }
