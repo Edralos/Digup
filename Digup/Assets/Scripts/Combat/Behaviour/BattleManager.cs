@@ -87,7 +87,7 @@ public class BattleManager : MonoBehaviour
 
     bool IsTargetValid(Character target, Effect effect)
     {
-        if (target is Ennemy)
+        if (target is Enemy)
         {
             return effect.Target == TargetType.ENNEMY;
         }

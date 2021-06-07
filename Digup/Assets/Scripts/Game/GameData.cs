@@ -20,12 +20,13 @@ public static class GameData
     private static Dictionary<string, Enemy> Enemies;
     private static Dictionary<string, TrinketItem> Trinkets;
     private static Dictionary<string, ActiveItem> ActiveEquipments;
-    private static Dictionary<string, TrinketItem> TrinketEquipments;
     private static Dictionary<string, ConsumableItem> Consumables;
 
     public static Dictionary<string, GameObject> AlliesPrefabs = new Dictionary<string, GameObject>();
     public static Dictionary<string, GameObject> EnemiesPrefabs = new Dictionary<string, GameObject>();
     public static Dictionary<string, GameObject> ItemsPrefabs = new Dictionary<string, GameObject>();
+
+    private static string DataPath;
 
     /// <summary>
     /// Get a referenced Ally
@@ -49,7 +50,7 @@ public static class GameData
     /// </summary>
     /// <param name="name">Name of Ennemy</param>
     /// <returns>Copy of referenced Ennemy if present, else returns null</returns>
-    public static Ennemy GetEnnemy(string name)
+    public static Enemy GetEnemy(string name)
     {
         if (Enemies == null)
         {
@@ -120,10 +121,9 @@ public static class GameData
         Task loadRoaster = Task.Run(() => LoadRoaster());
         Task loadFoes = Task.Run(() => LoadEnnemies());
         Task loadActiveEquipment = Task.Run(() => LoadActiveEquipments());
-        Task loadTrinketEquipment = Task.Run(() => LoadTrinketEquipments());
         Task loadConsumable = Task.Run(() => LoadConsumables());
         Task loadTrinkets = Task.Run(() => LoadTrinkets());
-        var res = Task.WhenAll(loadRoaster, loadFoes, loadActiveEquipment, loadTrinketEquipment, loadConsumable, loadTrinkets);
+        var res = Task.WhenAll(loadRoaster, loadFoes, loadActiveEquipment, loadConsumable, loadTrinkets);
         res.Wait();
         if (res.IsFaulted || res.IsCanceled)
         {
@@ -144,7 +144,7 @@ public static class GameData
     /// <summary>
     /// Loads ActiveItems from associated JSON file
     /// </summary>
-    private static void LoadEquipments()
+    private static void LoadActiveEquipments()
     {
         string json = File.ReadAllText(DataPath + ACTIVE_EQUIPMENTS_PATH);
         ActiveEquipments = JsonConvert.DeserializeObject<Dictionary<string, ActiveItem>>(json);
