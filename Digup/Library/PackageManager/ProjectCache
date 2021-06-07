@@ -13,7 +13,11 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< HEAD
       ticks: 637564194977246949
+=======
+      ticks: 637564225940140478
+>>>>>>> CombatSystem
     m_Hash: 1049041275
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}

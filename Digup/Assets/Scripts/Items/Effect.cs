@@ -2,25 +2,39 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+
 public enum EffectType { LIFE, CHARACTERSTAT, STATUS }
-public enum TargetType { SELF, ALLY, ENNEMY, ALL_ALLIES, ALL_FOES }
+public enum TargetType { SELF, ALLY, ENNEMY, ALL_ALLIES, ALL_ENNEMIES }
 public enum StatusType { NONE, BURN, BLEED, POISON, STUN, PARALIZE, PROVOKE, ALERT, DOPE, WITHDRAWAL, BAD_TRIP, }
 public enum CharacterStatType { NONE, MAX_HP, PROT, ATK, DODGE, SPEED }
 
+/// <summary>
+/// Properties of an effect applied to a character
+/// </summary>
 public class Effect : ICloneable
 {
 
     // NOTE : les effets < 0 sont des retraits. Ex : LIFE avec amount < 0 => dégats sinon heal, STATUS positif => inflige un statut sinon enlève le statut
     public TargetType Target;
     public List<EffectType> EffectTypes;
-    // on part du principe que les dictionnaires sont tremlis en accord avec les effect types possibles, la liste des Effect type permet 
+    // on part du principe que les dictionnaires sont remplis en accord avec les effect types possibles, la liste des Effect type permet 
     // seulement de vérifier qu'un dictionnaire est rempli
 
     public Dictionary<StatusType, int> StatusAmount;
     public Dictionary<CharacterStatType, int> CharacterStatAmount;
-    public List<int> LifeAmounts;
 
-    public Effect(TargetType targetType, IEnumerable<EffectType> effects, IEnumerable<int> lifeamounts = null, Dictionary<StatusType, int> statusamount = null, Dictionary<CharacterStatType, int> statamount = null)
+    // la liste int[] est de taille 2. Dans le cas où il y aurait 2 LifeAmount,  le 1er LifeAmount est un dégat et le 2e un Heal
+    public List<int[]> LifeAmounts;
+
+    /// <summary>
+    /// Constructor of Effect
+    /// </summary>
+    /// <param name="targetType">Target which the effect applies to</param>
+    /// <param name="effects">Efect types of the effect</param>
+    /// <param name="lifeamounts">If LIFE is among the effect types, gives the amounts healed/damaged</param>
+    /// <param name="statusamount">If STATUS is among the effect types, gives the amounts of each concerned StatusType</param>
+    /// <param name="statamount">If CHARACTERSTAT is among the effect types, gives the amounts of each concerned CharacterStatType</param>
+    public Effect(TargetType targetType, IEnumerable<EffectType> effects, IEnumerable<int[]> lifeamounts = null, Dictionary<StatusType, int> statusamount = null, Dictionary<CharacterStatType, int> statamount = null)
     {
         Target = targetType;
         EffectTypes = effects.Distinct().ToList();
@@ -49,7 +63,7 @@ public class Effect : ICloneable
         else
         {
 
-            LifeAmounts = new List<int>(lifeamounts);
+            LifeAmounts = new List<int[]>(lifeamounts);
         }
 
         if (statamount == null)

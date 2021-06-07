@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 /// <summary>
-/// Transitive datas used as references through the game
+/// Transitive datas used as references through the game (Items & Character)
 /// </summary>
 public static class GameData
 {
@@ -22,7 +22,15 @@ public static class GameData
     private static Dictionary<string, ActiveItem> ActiveEquipments;
     private static Dictionary<string, ConsumableItem> Consumables;
 
+    public static Dictionary<string, GameObject> AlliesPrefabs = new Dictionary<string, GameObject>();
+    public static Dictionary<string, GameObject> EnemiesPrefabs = new Dictionary<string, GameObject>();
+    public static Dictionary<string, GameObject> ItemsPrefabs = new Dictionary<string, GameObject>();
 
+    /// <summary>
+    /// Get a referenced Ally
+    /// </summary>
+    /// <param name="name">name of Ally</param>
+    /// <returns>Copy of a referenced Ally if present, else returns null</returns>
     public static Ally GetAlly(string name)
     {
         if (Roaster == null)
@@ -34,6 +42,12 @@ public static class GameData
         return (Ally)chara.Clone();
 
     }
+
+    /// <summary>
+    /// Get a referenced Ennemy
+    /// </summary>
+    /// <param name="name">Name of Ennemy</param>
+    /// <returns>Copy of referenced Ennemy if present, else returns null</returns>
     public static Ennemy GetEnnemy(string name)
     {
         if (Ennemies == null)
@@ -44,6 +58,12 @@ public static class GameData
         Ennemies.TryGetValue(name, out ennemy);
         return (Ennemy)ennemy.Clone();
     }
+
+    /// <summary>
+    /// Get a referenced ActiveItem
+    /// </summary>
+    /// <param name="name">Name of ActiveItem</param>
+    /// <returns>Copy of referenced ActiveItem if present, else returns null</returns>
     public static ActiveItem GetEquipment(string name)
     {
         if (ActiveEquipments == null)
@@ -54,6 +74,12 @@ public static class GameData
         ActiveEquipments.TryGetValue(name, out equipment);
         return (ActiveItem)equipment.Clone();
     }
+
+    /// <summary>
+    /// Get a referenced Consumable
+    /// </summary>
+    /// <param name="name">Name of Consumable</param>
+    /// <returns>Copy of referenced Consumable if present, else returns null</returns>
     public static ConsumableItem GetConsumable(string name)
     {
         if (Consumables == null)
@@ -66,6 +92,11 @@ public static class GameData
         return (ConsumableItem)consumable.Clone();
     }
 
+    /// <summary>
+    /// Get a referenced Trinket
+    /// </summary>
+    /// <param name="name">Name of Trinket</param>
+    /// <returns>Copy of referenced Trinket if present, else returns null</returns>
     public static TrinketItem GetTrinket(string name)
     {
         if (Consumables == null)
@@ -79,12 +110,8 @@ public static class GameData
     }
 
     /// <summary>
-    /// Loads all Dictionaries from Json reference game files
+    /// Loads all files into reference Ditionaries
     /// </summary>
-    /// <param name="roasterFile"></param>
-    /// <param name="foeFile"></param>
-    /// <param name="equipmentFile"></param>
-    /// <param name="consumableFiles"></param>
     public static void LoadDataDictionaries()
     {
         Task loadRoaster = new Task(() => LoadRoaster());
@@ -101,29 +128,46 @@ public static class GameData
 
     }
 
+    /// <summary>
+    /// Loads Consumables from associated JSON file
+    /// </summary>
     private static void LoadConsumables()
     {
         string json = File.ReadAllText(Application.dataPath + CONSUMABLES_PATH);
         Consumables = JsonConvert.DeserializeObject<Dictionary<string, ConsumableItem>>(json);
     }
 
+
+    /// <summary>
+    /// Loads ActiveItems from associated JSON file
+    /// </summary>
     private static void LoadEquipments()
     {
         string json = File.ReadAllText(Application.dataPath + EQUIPMENTS_PATH);
         ActiveEquipments = JsonConvert.DeserializeObject<Dictionary<string, ActiveItem>>(json);
     }
 
+    /// <summary>
+    /// Loads Ennemies from associated JSON file
+    /// </summary>
     private static void LoadEnnemies()
     {
         string json = File.ReadAllText(Application.dataPath + ENNEMIES_PATH);
         Ennemies = JsonConvert.DeserializeObject<Dictionary<string, Ennemy>>(json);
     }
 
+    /// <summary>
+    /// Loads Allies from associated JSON file
+    /// </summary>
     private static void LoadRoaster()
     {
         string json = File.ReadAllText(Application.dataPath + ROASTER_PATH);
         Roaster = JsonConvert.DeserializeObject<Dictionary<string, Ally>>(json);
     }
+
+    /// <summary>
+    /// Loads Trinkets from associated JSON file
+    /// </summary>
     private static void LoadTrinkets()
     {
         string json = File.ReadAllText(Application.dataPath + TRINKETS_PATH);
