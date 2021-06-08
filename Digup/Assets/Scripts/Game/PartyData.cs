@@ -14,7 +14,11 @@ public static class PartyData
 
     public static void AddPlayer(int id, Ally character)
     {
-        Allies.Add(id, character);
+        Ally a;
+        if(!Allies.TryGetValue(id, out a))
+        {
+            Allies.Add(id, character);
+        }
     }
     
 }

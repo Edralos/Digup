@@ -5,6 +5,10 @@ using UnityEngine;
 /// </summary>
 public class StartSinglePlayer : MonoBehaviour
 {
+    public GameObject CaptainPrefab;
+    public GameObject RatSoldierPrefab;
+    public GameObject SquarabPrefab;
+
     // Start is called before the first frame update
     public void HandleClick()
     {
@@ -16,6 +20,11 @@ public class StartSinglePlayer : MonoBehaviour
 
         //Load map and keep map
         Stage.InitStage("Gallery", 5);
+
+        //Load players
+        PartyData.AddPlayer(0, GameData.GetAlly("Captain"));
+        PartyData.Allies[0].Prefab = CaptainPrefab;
+
 
         //Play new music
         //todo: faire la musique

@@ -23,11 +23,9 @@ public class CharacterBehavior : MonoBehaviour
         Character.Doped = 0;
         Character.HasWithdrawal = false;
         Character.BadTrip = false;
-
-
     }
 
-    private void Start()
+    public void Init()
     {
         float healthRatio = (float)Character.HP / (float)Character.MaxHp;
 

@@ -10,15 +10,15 @@ public static class Stage
     /// <summary>
     /// The name of the stage ex: "Tunnels", "Mountain", "Sky"
     /// </summary>
-    private static string Name { get; set; }
+    public static string Name { get; set; }
     /// <summary>
     /// The max depth where the rooms can go
     /// </summary>
-    private static int MaxDepth { get; set; }
+    public static int MaxDepth { get; set; }
     /// <summary>
     /// The starting room of the stage
     /// </summary>
-    private static StageRoom CurrentRoom { get; set; }
+    public static StageRoom CurrentRoom { get; set; }
 
     /// <summary>
     /// This constructor create a Stage with a name and a max depth

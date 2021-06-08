@@ -743,6 +743,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72982c380ad376e43bc3e8537baad268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CaptainPrefab: {fileID: 5022962536746424178, guid: 787e26a7319e0f5489cf362e23b95a58, type: 3}
+  RatSoldierPrefab: {fileID: 997341374743769726, guid: 8cc0469985afcab419db39a81cb8db88, type: 3}
+  SquarabPrefab: {fileID: 4513474082657087369, guid: c33348fdcd7b7514aac8297e8a2a29bc, type: 3}
 --- !u!4 &867588145
 Transform:
   m_ObjectHideFlags: 0
