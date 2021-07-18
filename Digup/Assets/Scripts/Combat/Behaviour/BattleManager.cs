@@ -21,7 +21,6 @@ public class BattleManager : MonoBehaviour
     {
 
         State = BattleState.START;
-        Ally player = GameData.GetAlly("captain");
 
         foreach (var chara in Allies)
         {
@@ -35,7 +34,9 @@ public class BattleManager : MonoBehaviour
     }
 
 
-
+    /// <summary>
+    /// Determines the order of actions for a turn
+    /// </summary>
     void RollSpeed()
     {
         Dictionary<Character, int> speedrolls = new Dictionary<Character, int>();
@@ -54,6 +55,12 @@ public class BattleManager : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// Determines the amount of damage inflicted to a character
+    /// </summary>
+    /// <param name="chara">Character inflicting damage</param>
+    /// <param name="effect">Effect of the attack</param>
+    /// <returns></returns>
     int RollAttack(Character chara, Effect effect)
     {
         if (Random.Range(0, 100) >= 95)
@@ -63,6 +70,12 @@ public class BattleManager : MonoBehaviour
         return chara.AttakModifiers + Mathf.RoundToInt(Random.Range(effect.LifeAmounts[0][0], effect.LifeAmounts[0][1]));
     }
 
+
+    /// <summary>
+    /// Determines the amount of HP healed
+    /// </summary>
+    /// <param name="effect">Effect of the capacity</param>
+    /// <returns></returns>
     int RollHeal(Effect effect)
     {
         if (effect.LifeAmounts.Count > 1)
@@ -84,7 +97,12 @@ public class BattleManager : MonoBehaviour
     }
 
 
-
+    /// <summary>
+    /// Checks if ones effect can target a specific character
+    /// </summary>
+    /// <param name="target">Character targerted</param>
+    /// <param name="effect">Effect to check</param>
+    /// <returns></returns>
     bool IsTargetValid(Character target, Effect effect)
     {
         if (target is Enemy)

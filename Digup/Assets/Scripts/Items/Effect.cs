@@ -26,68 +26,7 @@ public class Effect : ICloneable
     // la liste int[] est de taille 2. Dans le cas où il y aurait 2 LifeAmount,  le 1er LifeAmount est un dégat et le 2e un Heal
     public List<int[]> LifeAmounts;
 
-    /// <summary>
-    /// Constructor of Effect
-    /// </summary>
-    /// <param name="targetType">Target which the effect applies to</param>
-    /// <param name="effects">Efect types of the effect</param>
-    /// <param name="lifeamounts">If LIFE is among the effect types, gives the amounts healed/damaged</param>
-    /// <param name="statusamount">If STATUS is among the effect types, gives the amounts of each concerned StatusType</param>
-    /// <param name="statamount">If CHARACTERSTAT is among the effect types, gives the amounts of each concerned CharacterStatType</param>
-    //public Effect(TargetType targetType, IEnumerable<EffectType> effects, IEnumerable<int[]> lifeamounts = null, Dictionary<StatusType, int> statusamount = null, Dictionary<CharacterStatType, int> statamount = null)
-    //{
-    //    Target = targetType;
-    //    EffectTypes = effects.Distinct().ToList();
-    //    //check correlation entre types d'effets
-    //    foreach (EffectType effectType in EffectTypes)
-    //    {
-    //        if (effectType == EffectType.CHARACTERSTAT && (statamount?.Count < 1 || statamount == null))
-    //        {
-    //            throw new ArgumentException("Stat effect has been declared but has no associated amounts");
-    //        }
-    //        else if (effectType == EffectType.STATUS && (statusamount?.Count < 1 || statusamount == null))
-    //        {
-
-    //            throw new ArgumentException("Status effect has been declared but has no associated amounts");
-    //        }
-    //        else if (effectType == EffectType.LIFE && (lifeamounts?.Count() < 1 || lifeamounts == null))
-    //        {
-
-    //            throw new ArgumentException("Life effect has been declared but has no associated amounts");
-    //        }
-    //    }
-    //    if (lifeamounts == null)
-    //    {
-    //        LifeAmounts = null;
-    //    }
-    //    else
-    //    {
-
-    //        LifeAmounts = new List<int[]>(lifeamounts);
-    //    }
-
-    //    if (statamount == null)
-    //    {
-
-    //        CharacterStatAmount = null;
-    //    }
-    //    else
-    //    {
-
-    //        CharacterStatAmount = statamount;
-    //    }
-
-    //    if (statusamount == null)
-    //    {
-
-    //        StatusAmount = null;
-    //    }
-    //    else
-    //    {
-
-    //        StatusAmount = statusamount;
-    //    }
-    //}
+   
 
     public object Clone()
     {

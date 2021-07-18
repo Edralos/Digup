@@ -27,6 +27,10 @@ public class AttackTextBehavior : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Displays text in the area with a fadeout effect
+    /// </summary>
+    /// <param name="txt">Text to display</param>
     public void DisplayText(string txt)
     {
         if (CurrentRoutine != null)
